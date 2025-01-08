@@ -1,10 +1,30 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import Sidebar from './components/Sidebar.vue'
+
+import {ref} from "vue";
+let visible = ref(false);
+let visible_header = ref(true);
+let btn_text = ref("Open");
+
+function open_menu() {
+  visible_header.value = !visible_header.value;
+  visible.value = !visible.value;
+  if (visible.value) {
+    btn_text.value = "Close";
+  } else {
+    btn_text.value = "Open";
+  }
+}
 </script>
 
 <template>
-  <header>
+<div class="relative h-20 grid grid-cols-2">
+  <button @click="open_menu" class="absolute right-5 top-5 border-2">{{btn_text}}</button>
+</div>
+<Sidebar v-if="visible"/>
+  <header v-if="visible_header">
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
@@ -17,7 +37,7 @@ import HelloWorld from './components/HelloWorld.vue'
     </div>
   </header>
 
-  <RouterView />
+  <!-- <RouterView /> -->
 </template>
 
 <style scoped>

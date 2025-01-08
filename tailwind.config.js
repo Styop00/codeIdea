@@ -5,10 +5,16 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
-    // fontFamily: {
-    //   'montserrat': ['']
-    // }
+    extend: {
+      colors: {
+        'sidebar-color': "#fafafa",
+        'sidebar-text-color': "#A9A9A9",
+        'sidebar-bg-color': '#e3e3e3',
+      },
+      fontFamily: {
+        'montserrat': 'Montserrat'
+      }
+    },
   },
   plugins: [],
 }
