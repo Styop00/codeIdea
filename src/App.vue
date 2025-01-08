@@ -5,42 +5,50 @@ import Sidebar from './components/Sidebar.vue'
 
 import {ref} from "vue";
 let visible = ref(false);
-let visible_header = ref(true);
-let btn_text = ref("Open");
+let visible_content = ref(true);
 
 function open_menu() {
-  visible_header.value = !visible_header.value;
+  visible_content.value = !visible_content.value;
   visible.value = !visible.value;
-  if (visible.value) {
-    btn_text.value = "Close";
-  } else {
-    btn_text.value = "Open";
-  }
 }
 </script>
 
 <template>
-<div class="relative h-20 grid grid-cols-2">
-  <button @click="open_menu" class="absolute right-5 top-5 border-2">{{btn_text}}</button>
-</div>
-<Sidebar v-if="visible"/>
-  <header v-if="visible_header">
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <button @click="open_menu" class="absolute right-5 top-12 border-2" v-if="visible_content">Open</button>
+  
+  <Transition>
+    <Sidebar v-if="visible">
+      <button @click="open_menu">
+        <fa :icon="['fas', 'xmark']" class="text-xl cursor-pointer" />
+      </button>
+    </Sidebar>
+  </Transition>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
+  <header v-if="visible_content">
+    aaaa
   </header>
+  
 
   <!-- <RouterView /> -->
 </template>
 
 <style scoped>
+
+.v-enter-active {
+  transition: opacity 0.5s;
+}
+
+.v-leave-active {
+  transition: 0.2s;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+
 header {
   line-height: 1.5;
   max-height: 100vh;

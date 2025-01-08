@@ -10,10 +10,11 @@ export default {
         'sidebar-color': "#fafafa",
         'sidebar-text-color': "#A9A9A9",
         'sidebar-bg-color': '#e3e3e3',
+        'logo-color': '#9A9A9A'
       },
       fontFamily: {
         'montserrat': 'Montserrat'
-      }
+      },
     },
   },
   plugins: [],
