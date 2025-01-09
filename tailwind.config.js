@@ -9,6 +9,9 @@ export default {
     // fontFamily: {
     //   'montserrat': ['']
     // }
+    colors:{
+      "butt_color":"#C4C4C4"
+    }
   },
   plugins: [],
 }
