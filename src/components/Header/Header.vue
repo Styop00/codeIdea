@@ -8,7 +8,7 @@
           Get in touch
       </div>
       <div >
-        <img :src="menuIcon" class="cursor-pointer" >
+        <img :src="menuIcon" class="cursor-pointer" @click="toggle_menu">
       </div>
     </div>
   </div>
@@ -16,7 +16,13 @@
 <script setup>
 import logo from "../../images/CODEIDEA.png"
 import menuIcon from "../../images/Frame 1.png"
+import {useDataStore} from "../../store/dataStore";
+const dataStore = useDataStore();
 
+function toggle_menu() {
+  dataStore.visible = !dataStore.visible;
+  dataStore.visible_content = !dataStore.visible_content;
+}
 </script>
 <style scoped>
   @media (max-width: 560px) {
