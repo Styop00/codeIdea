@@ -1,7 +1,7 @@
 <template>
   <div class="grid md:grid-cols-2 bg-white font-montserrat">
     <div class="bg-sidebar-color pt-9 h-screen">
-      <Logo class="md:pl-12 text-center"/>
+      <Logo class="md:pl-12 text-center md:text-left"/>
       <div class="relative top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                 text-sidebar-text-color font-bold px-10 lg:px-28">
         <SidebarLeftSection/>
