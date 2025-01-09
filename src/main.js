@@ -7,10 +7,17 @@ library.add(fas);
 
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
+
+import routes from '@/router/routes.js'
+import {createRouter, createWebHistory} from 'vue-router'
+const router = createRouter({ history: createWebHistory(), routes });
+
+import {createPinia} from 'pinia';
+const pinia = createPinia();
 
 const app = createApp(App)
 
 app.use(router)
 app.component('fa', FontAwesomeIcon)
+app.use(pinia)
 app.mount('#app')
