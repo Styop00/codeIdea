@@ -18,10 +18,13 @@
       </div>
     </div>
   </div>
+
+  
 </template>
 
 <script setup>
-import SidebarLeftSection from "@/components/SidebarLeftSection.vue"
-import SidebarMenuItems from "@/components/SidebarMenuItems.vue"
-import Logo from "@/components/Logo.vue"
+  import SidebarLeftSection from "@/components/SidebarLeftSection.vue"
+  import SidebarMenuItems from "@/components/SidebarMenuItems.vue"
+  import Logo from "@/components/Logo.vue"
+  import {ref} from "vue";
 </script>

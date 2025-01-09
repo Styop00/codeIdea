@@ -1,44 +1,43 @@
 <script setup>
-import Sidebar from './components/Sidebar.vue'
+  import Sidebar from './components/Sidebar.vue'
+  import {useDataStore} from "@/store/dataStore.js";
+  import {ref} from "vue";
+  
+  const dataStore = useDataStore();
 
-import {ref} from "vue";
-
-let visible = ref(false);
-let visible_content = ref(true);
-
-function open_menu() {
-  visible_content.value = !visible_content.value;
-  visible.value = !visible.value;
-}
+  function toggle_menu() {
+    dataStore.visible = !dataStore.visible;
+    dataStore.visible_content = !dataStore.visible_content;
+  }
 </script>
 
-<template>
-  <button @click="open_menu" class="absolute right-5 top-12 border-2" v-if="visible_content">Open</button>
+<template>  
+  <button @click="toggle_menu" class="absolute right-5 top-12 border-2 rounded border-black" v-if="dataStore.visible_content">Open</button>
 
   <Transition>
-    <Sidebar v-if="visible">
-      <button @click="open_menu">
-        <fa :icon="['fas', 'xmark']" class="text-xl cursor-pointer"/>
+    <Sidebar v-if="dataStore.visible">
+      <button @click="toggle_menu" class="cursor-pointer">
+        <fa :icon="['fas', 'xmark']" class="text-xl"/>
       </button>
     </Sidebar>
   </Transition>
 
-
-  <!-- <RouterView /> -->
+  <div v-if="dataStore.visible_content">
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
+  .v-enter-active {
+    transition: opacity 0.5s;
+  }
 
-.v-enter-active {
-  transition: opacity 0.5s;
-}
+  .v-leave-active {
+    transition: 0.2s;
+  }
 
-.v-leave-active {
-  transition: 0.2s;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-}
+  .v-enter-from,
+  .v-leave-to {
+    opacity: 0;
+  }
 </style>
