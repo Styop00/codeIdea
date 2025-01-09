@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import colors from 'tailwindcss/colors'
+
 export default {
   content: [
     "./index.html",
@@ -10,6 +12,7 @@ export default {
     },
     extend: {
       colors: {
+        ...colors,
         'sidebar-color': "#fafafa",
         'sidebar-text-color': "#A9A9A9",
         'sidebar-bg-color': '#e3e3e3',
