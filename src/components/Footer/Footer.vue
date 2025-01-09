@@ -1,22 +1,22 @@
 <template>
-  <div class="bg-[#000000] w-full parent py-[40px] mt-[15rem] px-[60px] flex flex-col justify-between  ">
+  <div class="bg-black w-full parent py-10 mt-14 px-14 flex flex-col justify-between  ">
     <div>
       <FooterItems/>
     </div>
-    <div class="flex gap-[28px] mt-[197.3px] mt-[0] logos  items-center">
-      <div class="flex items-center justify-center py-[12px] px-[16px]  rounded-[50%] border-[1px] border-[#FFFFFF]/25">
-        <img :src="fb" class="max-w-[7px]">
+    <div class="flex gap-7 mt-52 mt-0 logos  items-center">
+      <div class="flex items-center justify-center py-3 px-4  rounded-full border-2 border-white/25">
+        <img :src="fb" class="max-w-2">
       </div>
-      <div class="p-[13px]  rounded-[50%] border-[1px] border-[#FFFFFF]/25">
-        <img :src="ld" class="max-w-[14px] flex items-center justify-center">
+      <div class="p-3  rounded-full border-2 border-white/25">
+        <img :src="ld" class="max-w-3 flex items-center justify-center">
       </div>
-      <div class="p-[14px]  rounded-[50%] border-[1px] border-[#FFFFFF]/25">
-        <img :src="tw" class="max-w-[13px] h-[13px]">
+      <div class="p-3.5  rounded-full border-2 border-white/25">
+        <img :src="tw" class="max-w-3 h-3">
 
       </div>
     </div>
 
-    <div class="flex  year gap-[28px] mt-[102px]">
+    <div class="flex  year gap-7 mt-28">
       <span class="text-[#28282800]">
         ©{{new Date().getFullYear()}}. All Rights Reserved.
       </span>

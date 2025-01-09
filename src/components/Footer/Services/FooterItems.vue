@@ -1,7 +1,7 @@
 <template>
   <div class="flex parent  justify-between gap-1 flex-wrap w-full">
-    <div class="flex max-w-[303px] general flex-col gap-[15px]  ">
-      <img :src="logo" class="max-w-[128px]">
+    <div class="flex max-w-80 general flex-col gap-5">
+      <img :src="logo" class="max-w-32">
       <p class="about">
         Since 2015, we’ve helped 80+ fast-growing
               companies in over 20 different industries
@@ -12,7 +12,7 @@
 
     </div>
 
-    <div class="flex flex-col gap-[8px] ">
+    <div class="flex flex-col gap-2  ">
       <p>Services</p>
       <span>Web Development</span>
       <span>Mobile App Development</span>
@@ -25,7 +25,7 @@
       <span>Legacy App Modernization</span>
       <span>Discovery Workshops</span>
     </div>
-    <div class="flex flex-col gap-[8px]">
+    <div class="flex flex-col tech gap-2">
       <p>technologies</p>
       <span>.NET</span>
       <span>NODE JS</span>
@@ -34,7 +34,7 @@
       <span>ELECTRON</span>
       <span>AWS</span>
     </div>
-    <div class="flex flex-col gap-[8px] ins ">
+    <div class="flex flex-col gap-2 ins ">
       <p>INSIGHTS</p>
       <span>Case Studies</span>
       <span>Careers</span>
@@ -53,7 +53,7 @@ import logo from "../../../images/CODEIDEAFOOTER.png"
 </script>
 <style scoped>
 .ins{
-  margin-right: 6rem;
+  margin-right: 10rem;
 }
 .about{
   font-weight: 400;
@@ -79,16 +79,19 @@ import logo from "../../../images/CODEIDEAFOOTER.png"
     margin-bottom: 16px;
 
   }
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .parent{
     width: 70%;
     justify-content: space-between;
-    gap: 3rem;
+    gap: 4rem;
     margin-bottom: 2rem;
+
   }
-.general{
-  margin-right: 4rem;
-}
+  .ins{
+    margin-right: 117px;
+  }
+
+
 
 
 }

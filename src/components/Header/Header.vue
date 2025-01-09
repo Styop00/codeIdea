@@ -1,10 +1,10 @@
 <template>
-  <div class=" flex parent justify-between items-center mx-[60px]  pt-[32px] mt-0 mb-[3rem]">
+  <div class=" flex parent justify-between items-center mx-14  pt-8 mt-0 mb-12">
     <div>
       <img :src="logo" alt="CodeIdea" class="cursor-pointer">
     </div>
-    <div class="flex  gap-[31px] justify-center items-center" >
-      <div class="px-[27px] butt py-[12.5px] bg-butt_color rounded-[10px] font-bold font-xs leading-[15px] uppercase tracking-[3px] cursor-pointer">
+    <div class="flex  gap-8 justify-center items-center" >
+      <div class="px-7 butt py-3 bg-butt_color rounded-xl font-bold font-xs leading-4 uppercase tracking-widest cursor-pointer">
           Get in touch
       </div>
       <div >

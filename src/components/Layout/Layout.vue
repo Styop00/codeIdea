@@ -7,7 +7,7 @@
     </Sidebar>
   </Transition>
   <div class="w-full p-0 flex flex-col justify-between gap-[3rem]" v-if="dataStore.visible_content">
-    <div class=" w-full bg-[#ffff] z-5 pt-0 h-[104px] max-h-[104px] menu fixed">
+    <div class=" w-full bg-[#ffff] z-5 pt-0 h-28 max-h-28 menu fixed">
       <Header/>
     </div>
 
