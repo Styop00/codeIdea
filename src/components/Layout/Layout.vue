@@ -6,13 +6,13 @@
       </button>
     </Sidebar>
   </Transition>
-  <div class="w-full p-0 flex flex-col justify-between gap-[3rem]" v-if="dataStore.visible_content">
-    <div class=" w-full bg-[#ffff] z-5 pt-0 h-28 max-h-28 menu fixed">
-      <Header/>
-    </div>
-
-
+  <div class="w-full p-0 flex flex-col justify-between gap-12" v-if="dataStore.visible_content">
     <div >
+      <div class="mb-28">
+        <div class=" w-full bg-white z-5 pt-0 h-28 max-h-28 menu fixed">
+          <Header/>
+        </div>
+      </div>
       <RouterView />
     </div>
     <Footer/>
@@ -38,4 +38,16 @@ function toggle_menu() {
     }
   }
 
+  .v-enter-active {
+    transition: opacity 0.5s;
+  }
+
+  .v-leave-active {
+    transition: 0.2s;
+  }
+
+  .v-enter-from,
+  .v-leave-to {
+    opacity: 0;
+  }
 </style>
