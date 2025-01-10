@@ -3,7 +3,7 @@
     <div>
       <FooterItems/>
     </div>
-    <div class="flex gap-7 mt-52 mt-0 logos  items-center">
+    <div class="flex md:gap-7 lg:gap-7  md:mt-2 lg:mt-2  mt-12 gap-2  items-center">
       <div class="flex items-center justify-center py-3 px-4  rounded-full border-2 border-white/25">
         <img :src="fb" class="max-w-2">
       </div>
@@ -16,14 +16,14 @@
       </div>
     </div>
 
-    <div class="flex  year gap-7 mt-28">
-      <span class="text-[#28282800]">
+    <div class="flex  flex-col-reverse gap-4 md:flex-row md:gap-7 lg:flex-row md:gap-7  mt-28">
+      <span class="text-footer_text_color text-base leading-3 font-normal">
         ©{{new Date().getFullYear()}}. All Rights Reserved.
       </span>
-      <span>
+      <span class="text-footer_text_color text-base leading-3 font-normal">
         Privacy Policy
       </span>
-      <span>
+      <span class="text-footer_text_color text-base font-normal leading-3">
         Terms of  service
       </span>
     </div>
@@ -39,28 +39,6 @@ import ld from "../../images/ld.png"
 import tw from "../../images/Twitter.png"
 </script>
 <style scoped>
-span{
-  font-size: 14px;
-  color: #B3B3B3;
-  font-weight: 400;
-  line-height: 14px;
-}
-@media (max-width: 600px) {
-  .year{
-    flex-direction: column-reverse;
-    gap:10px
-  }
-  .logos{
-    gap:2px;
-    margin-top: 4rem;
-  }
 
 
-}
-@media (max-width: 350px){
-  .parent{
-    padding-inline: 10px;
-  }
-
-}
 </style>
