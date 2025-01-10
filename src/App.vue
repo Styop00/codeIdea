@@ -1,8 +1,7 @@
 <script setup>
   import Sidebar from './components/Sidebar.vue'
   import {useDataStore} from "@/store/dataStore.js";
-  import {ref} from "vue";
-  
+
   const dataStore = useDataStore();
 
   function toggle_menu() {
@@ -11,7 +10,7 @@
   }
 </script>
 
-<template>  
+<template>
   <button @click="toggle_menu" class="absolute right-5 top-12 border-2 rounded border-black" v-if="dataStore.visible_content">Open</button>
 
   <Transition>
