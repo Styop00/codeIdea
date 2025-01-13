@@ -15,8 +15,13 @@ export default {
         'sidebar-text-color': "#A9A9A9",
         'sidebar-bg-color': '#e3e3e3',
         'logo-color': '#9A9A9A',
-        'footer_text_color':'#B3B3B3',
-        "butt_color":"#C4C4C4"
+        'gray-100':'#B3B3B3',
+        "gray-600":"#C4C4C4",
+        "gray-400":"#28282800",
+        "gray-500":"#28282814",
+        'gray-200':"#fefefe",
+        'gray-300':"#efefef",
+        "gray-10":"#282929"
 
       },
       fontFamily: {
