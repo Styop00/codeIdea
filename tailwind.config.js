@@ -19,6 +19,7 @@ export default {
         "gray-600":"#C4C4C4",
         "gray-400":"#28282800",
         "gray-500":"#28282814",
+        "gray-150":"#00000040",
         'gray-200':"#fefefe",
         'gray-300':"#efefef",
         "gray-10":"#282929"
