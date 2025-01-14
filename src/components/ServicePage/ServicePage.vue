@@ -1,16 +1,13 @@
 <template>
   <div>
-    <ServiceAbout/>
-    <Technologies/>
+    <ServiceTechnologies :data="myData.ui"/>
     <ContactUs/>
   </div>
 </template>
-<script setup></script>
-<script>
-import ServiceAbout from "./ServiceAbout.vue";
-import Technologies from "./Technologies.vue";
+<script setup>
 import ContactUs from "../Contacts/ContactUs.vue";
-export default {
-  components: {ContactUs, Technologies, ServiceAbout}
-}
+import {myData} from "./ServiceTechnologies/serviceData.js"
+import ServiceTechnologies from "./ServiceTechnologies/ServiceTechnologies.vue";
+
 </script>
+
