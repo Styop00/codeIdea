@@ -4,12 +4,9 @@
       <div class="lg:w-3/6 md:w-0 w-0"></div>
       <div class="flex w-full justify-between  items-center">
         <div class="font-bold lg:text-5xl md:text-2xl text-xl md:text-3xl md:text-center  lg:text-center" >Technologies we work in</div>
-        <!-- <div  :class="active?'rotate-180':'rotate-0'" class="p-2 rounded-full w-10 h-10  cursor-pointer flex items-center  justify-center  bg-white shadow-md shadow-gray-150 " @click="active=!active">
-           <img :src="arrow" >
-         </div> -->
       </div>
     </div>
-    <div :class="active?'flex flex-wrap':'hidden'" class=" lg:gap-16 gap-7  md:gap-14">
+    <div class=" lg:gap-16 gap-7 flex flex-wrap md:gap-14">
       <p v-for="logo in logos">
         <img :src="logo" class=" transition-ease duration-300 grayscale	 hover:grayscale-0 " v-if="logo!==iosLogo" >
         <img :src="logo" class=" transition-ease duration-500 invert	 hover:invert-0" v-else>
@@ -55,7 +52,5 @@ const logos = [
   nodeLogo, javaLogo, pyLogo, djLogo, iosLogo, androidLogo, postgrLogo, sqlitLogo, mongoLogo, redisLogo,
   colLogo, awsLogo, googleLogo, herokuLogo, firebasLogo, dockerLogo, kuberLogo
 ]
-const active=ref(true)
-
 
 </script>
