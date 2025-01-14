@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full md:w-full lg:w-2/4 bg-white py-24  pl-0 md:pl-0 lg:pl-32 pr-0 md:pr-0 lg:pr-28 flex child flex-col">
+  <div class="w-full md:w-full lg:w-2/4 bg-white py-24  pl-0 md:pl-0 lg:pl-32 pr-0 md:pr-0 lg:pr-28 flex child flex-col ">
     <div class="font-bold uppercase text-xxl md:text-3xl lg:text-5xl leading-10 tracking-widest mb-16">What comes next?</div>
     <div class="uppercase font-bold text-lg leading-6 tracking-widest mb-3">Project Follow-Up</div>
     <div class="font-normal tracking-widest text-sm text-gray-10">You’ll hear from one of these guys within 48 hours</div>
