@@ -1,5 +1,5 @@
 <template>
-    <li class="relative bg-white cursor-pointer" 
+    <li class="relative bg-white cursor-pointer text-gray-900 md:text-black" 
     @click="emit('questionEmit')"> 
         <div class="px-4 pr-10 py-6 border-1px ">
             <span>{{ q }}</span>

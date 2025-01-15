@@ -1,6 +1,6 @@
 <template>
-    <section id="questions" class="px-10 sm:px-24">
-        <SectionsTitle sections_title="Frequently asked questions" class="my-10 md:mt-0" />
+    <section id="questions" class="md:px-10 sm:px-24">
+        <SectionsTitle sections_title="Frequently asked questions" class="mx-10 md:mx-0 my-10 md:mt-0" />
         <div class="grid md:grid-cols-2">
             <div>
                 <ul>
@@ -8,7 +8,7 @@
                     <QuestionItem class="relative"
                         :q=question.text 
                         @question-emit="show_question(index)" 
-                        :class="{'!bg-white-50': index === activeIndex, 'font-bold': index===activeIndex}"
+                        :class="{'!bg-white-50': index === activeIndex, 'font-bold': index===activeIndex, 'text-black': index===activeIndex}"
                     >
                         <template #arrow>
                             <img src="@/assets/img/right_arrow.svg" 
@@ -20,7 +20,7 @@
                             :class="{'!visible': index===activeIndex}">
                         </template>
 
-                        <div class="font-normal px-4 relative bottom-0 left-0 md:hidden bg-white-60 py-4" :class="{'hidden': index !== activeIndex}">
+                        <div class="font-normal text-black-150 px-4 relative bottom-0 left-0 md:hidden bg-white-60 py-4" :class="{'hidden': index !== activeIndex}">
                             {{ question.text }}
                         </div>
                     </QuestionItem>
