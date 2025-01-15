@@ -1,27 +1,51 @@
 /** @type {import('tailwindcss').Config} */
+import colors from 'tailwindcss/colors'
+
 export default {
   content: [
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
+
     extend: {
       colors: {
-        'sidebar-color': "#fafafa",
-        'sidebar-text-color': "#A9A9A9",
-        'sidebar-bg-color': '#e3e3e3',
-        'logo-color': '#9A9A9A',
-        'button-bg-color': '#c4c4c4',
-        'txt-color': '#282929',
-        'comments-bg-color': '#FAFBFB',
-        'position-text-color': '#000000DE',
-        'description-color':'#3c3d3d',
-        'effect-background-color': '#7B5EB6',
-        'home-background-color': '#f2f2f2',
-        'div-background-color': '#d9d9d9',
-        'active-item': '#F6F6F6',
-        'question-text-color': '#18191F',
-        '#FAFBFF': '#FAFBFF',
+        ...colors,
+
+        'white-20': '#fafafa',
+        'white-30': '#FAFBFB',
+        'white-40': '#f2f2f2',
+        'white-50': '#F6F6F6',
+        'white-60': '#FAFBFF',
+        'white-100': '#e3e3e3',
+
+        'black-10': '#000000DE',
+        'black-200': '#18191F',
+
+        'purple-10': '#7B5EB6',
+        'purple-20': '#7B42A7',
+
+        'pink-10': '#FF5A7F',
+
+        'green-10': '#17BF83',
+
+        'orange-10': '#FF9D00',
+        
+        'blue-10': '#B4BAED',
+        'blue-100': '#4E95D8',
+
+        "gray-10":"#282929",
+        'gray-100':'#B3B3B3',
+        "gray-150":"#00000040",
+        'gray-200':"#fefefe",
+        'gray-300':"#efefef",
+        "gray-400":"#28282800",
+        "gray-500":"#28282814",
+        "gray-600":"#C4C4C4",
+        'gray-700': '#A9A9A9',
+        'gray-750': '#9A9A9A',
+        'gray-800': '#3c3d3d',
+        'gray-850': '#d9d9d9',
       },
       fontFamily: {
         'montserrat': 'Montserrat'

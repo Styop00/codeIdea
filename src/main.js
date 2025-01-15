@@ -8,11 +8,12 @@ library.add(fas);
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import routes from '@/router/routes.js'
 import {createRouter, createWebHistory} from 'vue-router'
-const router = createRouter({ history: createWebHistory(), routes });
 
 import {createPinia} from 'pinia';
+import routes from "./router/routes";
+const router = createRouter({ history: createWebHistory(), routes });
+
 const pinia = createPinia();
 
 
