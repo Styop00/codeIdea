@@ -1,5 +1,5 @@
 <script setup>
-  import Sidebar from './components/Sidebar.vue'
+  import Sidebar from './components/Menu/Sidebar.vue'
   import {useDataStore} from "@/store/dataStore.js";
   import {ref} from "vue";
   
@@ -9,6 +9,7 @@
     dataStore.visible = !dataStore.visible;
     dataStore.visible_content = !dataStore.visible_content;
   }
+
 </script>
 
 <template>  
