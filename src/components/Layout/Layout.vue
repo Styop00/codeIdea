@@ -15,27 +15,26 @@
       </div>
       <RouterView />
     </div>
-    <ServicePage/>
     <Footer/>
   </div>
 </template>
+
 <script setup>
-import Header from "../Header/Header.vue"
-import Footer from "../Footer/Footer.vue";
-import {useDataStore} from "../../store/dataStore";
-import Sidebar from "../Sidebar.vue";
-import ServicePage from "../ServicePage/ServicePage.vue";
+  import Header from "../Header/Header.vue"
+  import Footer from "../Footer/Footer.vue";
+  import {useDataStore} from "../../store/dataStore";
+  import Sidebar from "../Menu/Sidebar.vue";
+  import ServicePage from "../ServicePage/ServicePage.vue";
 
-const dataStore = useDataStore();
+  const dataStore = useDataStore();
 
-function toggle_menu() {
-  dataStore.visible = !dataStore.visible;
-  dataStore.visible_content = !dataStore.visible_content;
-}
+  function toggle_menu() {
+    dataStore.visible = !dataStore.visible;
+    dataStore.visible_content = !dataStore.visible_content;
+  }
 </script>
+
 <style  scoped>
-
-
   .v-enter-active {
     transition: opacity 0.5s;
   }

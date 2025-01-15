@@ -16,9 +16,14 @@ const router = createRouter({ history: createWebHistory(), routes });
 
 const pinia = createPinia();
 
+
+
+
+
 const app = createApp(App)
 
 app.use(router)
 app.component('fa', FontAwesomeIcon)
 app.use(pinia)
+// app.use(gsap)
 app.mount('#app')
