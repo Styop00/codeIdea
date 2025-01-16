@@ -17,8 +17,9 @@ export default {
         'white-40': '#f2f2f2',
         'white-50': '#F6F6F6',
         'white-60': '#FAFBFF',
+        'white-70': '#FAFCFF',
         'white-100': '#e3e3e3',
-
+        
         'black-10': '#000000DE',
         'black-100': '#000000AD',
         'black-150': '#3C3C43D9',
@@ -49,6 +50,7 @@ export default {
         'gray-800': '#3c3d3d',
         'gray-850': '#d9d9d9',
         'gray-900': '#979797',
+        'gray-950': '#D7D7D7',
       },
       fontFamily: {
         'montserrat': 'Montserrat'
@@ -88,16 +90,18 @@ export default {
         '1px': '1px',
       },
       borderColor: {
-        'color1': '#d6dede',
+        'gray-400': '#d6dede',
       },
       borderRadius: {
-        'buttom-radius': '10px',
+        '10px': '10px',
         '16px': '16px',
       },
       boxShadow: {
-        'shadow1': "0px 10px 40px 0px #0000000F",
-        'shadow2': "0px 10px 64px 0px #00000014",
-        'shadow3': "0px 0px 4px 1px #00000026",
+        'ex-small': '0px 4px 4px 0px #00000024',
+        'small-10':"0px 4px 4px 0px #00000014",
+        'small': "0px 0px 4px 1px #00000026",
+        'medium': "0px 10px 40px 0px #0000000F",
+        'large': "0px 10px 64px 0px #00000014",
       },
       inset: {
         '18px': '18px',

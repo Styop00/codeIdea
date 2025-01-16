@@ -1,5 +1,5 @@
 <template>
-    <div class="shadow-shadow2 p-2 md:p-16 bg-white w-full">
+    <div class="shadow-large p-2 md:p-16 bg-white w-full">
         <div class="relative">
             <div class="w-1/2">
                 <slot/>

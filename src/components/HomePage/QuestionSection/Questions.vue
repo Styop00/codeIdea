@@ -27,7 +27,7 @@
                 </template>
                 </ul>
             </div>
-            <div class="bg-white-30 shadow-shadow3 rounded-16px
+            <div class="bg-white-30 shadow-small rounded-16px
                         px-8 md:pl-20 lg:pl-28 py-10 mt-7 md:mt-0 md:relative -left-10 -top-7 -z-1 
                         min-h-590px lg:min-h-472px hidden md:inline" >
                 <h4 class="font-semibold text-lg text-black-200 mb-10">{{ question }}</h4>
