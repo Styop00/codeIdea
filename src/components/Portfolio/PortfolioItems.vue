@@ -1,7 +1,7 @@
 <template>
   <div class=" lg:px-14 px-0  md:px-64  w-full flex flex-col lg:flex-row relative gap-x-4 gap-y-0 lg:gap-y-64 flex-wrap justify-between  lg:-translate-y-[10%]  " >
     <div  v-for="(item,index) in items" class=" lg:w-[40%] w-full  relative">
-      <div :style="{ backgroundColor: item.color }" :class="['  h-screen-700',
+      <div :style="{ backgroundColor: item.color }" :class="[' h-screen-700',
       index % 2===0?'transform -translate-y-0':'transform lg:-translate-y-[80%]']">
         <div class="lg:w-[103%] md:w-[150%] w-3/4 z-1 absolute">
           <img :src="item.avatar" class="w-full">

@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white shadow-shadow1 p-8 md:p-10 w-300px md:w-full min-h-460px relative">
+    <div class="bg-white shadow-medium p-8 md:p-10 w-300px md:w-full min-h-460px relative">
         <div>
             <img src="@/assets/img/comments/icon.svg">
         </div>

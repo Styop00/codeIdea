@@ -1,3 +1,7 @@
 <template>
-  <h1>Blog</h1>
+  <BlogPage />
 </template>
+
+<script setup>
+  import BlogPage from "@/components/BlogPage/BlogPage.vue"
+</script>
