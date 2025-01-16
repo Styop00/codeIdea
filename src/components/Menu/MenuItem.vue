@@ -1,5 +1,5 @@
 <template>
-    <li class="capitalize cursor-pointer md:text-3xl font-bold md:mt-5">
+    <li class="capitalize cursor-pointer md:text-3xl font-bold mt-5">
         {{item}}
     </li>
 </template>
