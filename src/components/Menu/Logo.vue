@@ -1,5 +1,5 @@
 <template>
     <div>
-        <a href="#" class="text-gray-750 text-26px"><span class="font-bold">CODE</span> IDEA</a>
+        <a href="#" class="text-3xl"><span class="font-bold">CODE</span>IDEA</a>
     </div>
 </template>
