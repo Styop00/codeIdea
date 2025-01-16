@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-    import MenuItem from "@/components/MenuItem.vue"
+    import MenuItem from "@/components/Menu/MenuItem.vue"
 
     import {ref} from "vue"
     import {useRouter} from "vue-router"

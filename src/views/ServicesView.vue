@@ -1,3 +1,7 @@
 <template>
-  <h1>Services</h1>
+  <ServicePage/>
 </template>
+
+<script setup>
+import ServicePage from "../components/ServicePage/ServicePage.vue"
+</script>
