@@ -9,6 +9,9 @@ export default {
   theme: {
 
     extend: {
+      height:{
+        "screen-700":"700px"
+      },
       colors: {
         ...colors,
         'sidebar-color': "#fafafa",
@@ -23,7 +26,6 @@ export default {
         'gray-200':"#fefefe",
         'gray-300':"#efefef",
         "gray-10":"#282929"
-
       },
       fontFamily: {
         'montserrat': 'Montserrat'

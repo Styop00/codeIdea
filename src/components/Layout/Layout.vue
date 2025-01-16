@@ -9,13 +9,13 @@
   <div class="w-full p-0 flex flex-col justify-between " v-if="dataStore.visible_content">
     <div >
       <div class="mb-28">
-        <div class=" w-full h-24 bg-gradient-to-r from-gray-200 to-gray-300 pt-0 md:h-28 lg:h-28  max-h-28 z-[99] fixed">
+        <div class=" w-full  bg-gradient-to-r from-gray-200 to-gray-300 pt-0 md:h-28 h-28  max-h-28 z-[99] fixed">
           <Header/>
         </div>
       </div>
       <RouterView />
     </div>
-    <ServicePage/>
+    <PortfolioGeneral/>
     <Footer/>
   </div>
 </template>
@@ -25,6 +25,7 @@ import Footer from "../Footer/Footer.vue";
 import {useDataStore} from "../../store/dataStore";
 import Sidebar from "../Sidebar.vue";
 import ServicePage from "../ServicePage/ServicePage.vue";
+import PortfolioGeneral from "../Portfolio/PortfolioGeneral.vue";
 
 const dataStore = useDataStore();
 

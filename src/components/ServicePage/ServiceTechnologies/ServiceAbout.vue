@@ -1,5 +1,5 @@
 <template>
-  <div class="px-14 bg-gradient-to-r from-gray-400   to-gray-500 py-24 flex-col "  >
+  <div class="px-14 bg-gradient-to-r from-gray-400 to-gray-500 py-24 flex-col "  >
     <div class="flex flex-col gap-3">
       <p class="font-bold text-base leading-4 tracking-wider uppercase">services</p>
       <div class="mb-6 font-bold lg:text-5xl md:text-3xl text-2xl leading-loose tracking-wide " >
