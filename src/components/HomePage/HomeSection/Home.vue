@@ -12,7 +12,7 @@
             <div class="bg-gray-850 w-345px md:w-500px h-353px md:h-600px md:ml-20 mt-5 md:mt-0"></div>
         </div>
 
-        <AcceptCookie class="absolute bottom-6"/>
+<!--        <AcceptCookie class="absolute bottom-6"/>-->
     </section>
 </template>
 

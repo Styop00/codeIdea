@@ -1,11 +1,13 @@
 <template>
   <Home />
-  <Services />
-  <Effects />
-  <Awards />
-  <Comments />
-  <Questions />
-  <ContactUs />
+  <div>
+    <Services />
+    <Effects />
+    <Awards />
+    <Comments />
+    <Questions />
+    <ContactUs />
+  </div>
 </template>
 
 <script setup>

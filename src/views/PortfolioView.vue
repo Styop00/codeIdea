@@ -1,3 +1,7 @@
 <template>
-  <h1>Portfolio</h1>
+  <PortfolioGeneral/>
 </template>
+<script setup>
+import PortfolioGeneral from "../components/Portfolio/PortfolioGeneral.vue";
+
+</script>
