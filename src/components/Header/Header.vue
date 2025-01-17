@@ -1,5 +1,6 @@
 <template>
-  <div class=" flex  justify-between items-center mx-6 md:mx-14 lg:mx-14 lg:pt-8 md:pt-8 md:mt-0 lg:mt-0  pt-8 lg:mb-12 md:mb-12 mb-2">
+  <div class="mx-auto 2xl:w-1400px xl:w-1200px lg:w-1000px md:w-800px sm:w-600px w-400px 
+  flex  justify-between items-center lg:pt-8 md:pt-8 md:mt-0 lg:mt-0  pt-8 lg:mb-12 md:mb-12 mb-2">
     <div>
       <img :src="logo" alt="CodeIdea" class="cursor-pointer">
     </div>

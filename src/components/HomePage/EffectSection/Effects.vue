@@ -1,5 +1,5 @@
 <template>
-    <section id="effects" class="px-10 sm:px-24">
+    <section id="effects">
         <SectionsTitle sections_title="That's the CodeIdea’s effect" class="mb-10"/>
         <div class="relative min-h-1000px hidden md:inline-block w-full"> 
             <Transition 
