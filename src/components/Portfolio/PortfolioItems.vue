@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mx-auto 2xl:w-1400px xl:w-1200px lg:w-1000px md:w-800px sm:w-600px w-400px
+    class="
     w-full flex flex-col lg:flex-row relative gap-x-4 gap-y-0 lg:gap-y-64 flex-wrap justify-between lg:-translate-y-[10%]">
     <div v-for="(item,index) in items" class="lg:w-[40%] w-full relative">
       <div :style="{ backgroundColor: item.color }" :class="[' h-screen-700',
