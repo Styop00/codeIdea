@@ -1,5 +1,5 @@
 <template>
-  <div class="div_container
+  <div class="div_container px-5 sm:px-0
   flex  justify-between items-center lg:pt-8 md:pt-8 md:mt-0 lg:mt-0  pt-8 lg:mb-12 md:mb-12 mb-2">
     <div>
       <img :src="logo" alt="CodeIdea" class="cursor-pointer">
