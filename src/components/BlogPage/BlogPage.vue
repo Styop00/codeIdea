@@ -1,6 +1,5 @@
 <template>
-  <div class="mx-auto 2xl:w-1400px xl:w-1200px lg:w-1000px md:w-800px sm:w-600px w-400px
-  md:pb-72 md:pt-40">
+  <div class="div_container md:pb-72 pt-5 md:pt-40 px-5 sm:px-0">
         <BlogTitle />
         <BlogButtons />
         <Articles />

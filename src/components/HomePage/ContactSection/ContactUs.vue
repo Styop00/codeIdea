@@ -1,5 +1,5 @@
 <template>
-    <section id="contact" class="md:py-28">
+    <section id="contact" class="md:py-28 px-5 sm:px-0">
         <div class="flex lg:justify-between flex-col lg:flex-row">
             <div class="md:border-[3px] border-gray-10 lg:w-1/2 md:px-14 pt-20 md:pb-28">
                 <h3 class="text-lg font-bold tracking-widest">CONTACT US</h3>

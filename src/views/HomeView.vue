@@ -1,6 +1,6 @@
 <template>
   <Home />
-  <div class="mx-auto 2xl:w-1400px xl:w-1200px lg:w-1000px md:w-800px sm:w-600px w-400px">
+  <div class="div_container">
     <Services />
     <Effects />
     <Awards />

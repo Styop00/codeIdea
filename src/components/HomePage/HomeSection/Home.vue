@@ -1,6 +1,6 @@
 <template>
-    <section id="home" class="md:bg-white-40 relative">
-        <div class="mx-auto 2xl:w-1400px xl:w-1200px lg:w-1000px md:w-800px sm:w-600px w-400px
+    <section id="home" class="md:bg-white-40 relative px-5 sm:px-0">
+        <div class="div_container
         flex flex-wrap md:flex-nowrap justify-between pt-28 md:py-40">
             <div class="text-3xl md:text-4xl font-bold sm:mt-28 lg:mt-48 tracking-wider">
                 <p class="mb-4">Front-end developer</p>
