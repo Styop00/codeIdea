@@ -1,18 +1,18 @@
 <template>
     <div class="shadow-large p-2 md:p-16 bg-white w-full">
-        <div class="relative">
-            <div class="w-1/2">
+        <div class="relative overflow-hidden">
+            <div class="w-3/4 md:w-1/2 relative z-1">
                 <slot/>
-                <div class="relative h-button-height">
+                <div class="relative">
                     <slot name="circle"/>
-                    <p class="uppercase text-xs font-bold tracking-widest
-                    absolute top-1/2 left-18px -translate-y-1/2">
+                    <p class="uppercase text-[7px] md:text-xs font-bold tracking-widest
+                    absolute top-1/2 left-[10px] md:left-18px -translate-y-1/2">
                         Case study
                     </p>
                 </div>
             </div>
 
-            <div class="md:h-full absolute top-1/2 -translate-y-1/2 md:top-0 md:translate-y-0 w-1/2 md:w-2/3 right-0 md:z-0">
+            <div class="absolute top-1/2 -translate-y-1/2 w-3/5 right-0">
                 <slot name="img"/>
             </div>
         </div>
