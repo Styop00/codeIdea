@@ -1,5 +1,5 @@
 <template>
-    <section id="home" class="md:bg-white-40 relative px-5 sm:px-0">
+    <section id="home" class="md:bg-gradient-to-r from-gray-200 to-gray-300 relative px-5 sm:px-0">
         <div class="div_container
         flex flex-wrap md:flex-nowrap justify-between pt-28 md:py-40">
             <div class="text-3xl md:text-4xl font-bold sm:mt-28 lg:mt-48 tracking-wider">
