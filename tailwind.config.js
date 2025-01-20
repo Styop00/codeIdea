@@ -12,7 +12,7 @@ export default {
       'md': '870px',
       'lg': '1080px',
       'xl': '1300px',
-    },    
+    },
     extend: {
       colors: {
         ...colors,
@@ -56,6 +56,7 @@ export default {
         'gray-850': '#d9d9d9',
         'gray-900': '#979797',
         'gray-950': '#D7D7D7',
+        'gray-1000':"#D9D9D9",
         "black-250":'#282929'
       },
       fontFamily: {

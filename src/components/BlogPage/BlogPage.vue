@@ -1,6 +1,6 @@
 <template>
-  <div class="div_container md:pb-72 pt-5 md:pt-40 px-5 sm:px-0">
-        <div>
+  <div class="w-full md:bg-gradient-to-r from-gray-200 to-gray-300 md:pb-72 pt-5 md:pt-40 px-5 sm:px-0">
+        <div class="div_container">
             <BlogTitle />
             <BlogButtons />
             <Articles />

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ServiceTechnologies :data="myData.ui"/>
+    <ServiceTechnologies :data="myData.web"/>
     <ContactUs/>
   </div>
 </template>
