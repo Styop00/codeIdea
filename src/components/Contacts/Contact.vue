@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full md:w-full lg:w-2/4 flex flex-col pl-0 md:pl-0  gap-4 pt-24 pl-0 md:pl-0 lg:pl-16 pr-14 pb-32 md:border-0 border-0 lg:border-4 lg:border-gray-10 ">
+    class="w-full md:w-full lg:w-2/4 flex flex-col pl-0 md:pl-0  gap-4 pt-24 pl-0 md:pl-0 lg:pl-16 lg:pr-14 pb-32 md:border-0 border-0 lg:border-4 lg:border-gray-10 ">
     <div class="font-bold uppercase text-lg leading-5 tracking-widest">Contact us</div>
     <div>Thank you for your time. We really appreciate your interest in our company.  </div>
     <div class="flex flex-col gap-0 ">
@@ -36,9 +36,9 @@
           studies</div>
 
       </div>
-      <button class="py-3 px-16 bg-gray-600  font-bold text-center text-xs leading-4 tracking-wider rounded-lg mt-9">
+      <div class="py-3 px-16 bg-gray-600  w-full md:w-3/5 md:text-center font-bold text-center text-xs leading-4 tracking-wider rounded-lg mt-9">
         SEND
-      </button>
+      </div>
 
     </div>
   </div>
