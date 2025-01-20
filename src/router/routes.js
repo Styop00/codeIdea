@@ -6,6 +6,8 @@ import Careers from "@/views/CareersView.vue"
 import About from "@/views/AboutView.vue"
 import Contact from "@/views/ContactView.vue"
 
+import Article from "@/components/BlogPage/ArticlePage/ArticlePage.vue"
+
 export default [
     {
         path: '/',
@@ -26,7 +28,19 @@ export default [
         path: '/blog',
         component: Blog,
         name: 'blog',
+        // children: [
+        //     {
+        //         path: 'article',
+        //         component: Article,
+        //         name: 'article',
+        //     }
+        // ],
     },
+    {
+        path: '/blog/article/:id',
+        component: Article,
+        name: 'article',
+    }, 
     {
         path: '/careers',
         component: Careers,
