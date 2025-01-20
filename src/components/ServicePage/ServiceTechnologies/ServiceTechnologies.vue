@@ -1,6 +1,8 @@
 <template>
   <ServiceAbout :data="data"/>
-  <Technologies :data="data.logos"/>
+  <div class="div_container">
+    <Technologies :data="data.logos"/>
+  </div>
 </template>
 <script setup>
 import ServiceAbout from "./ServiceAbout.vue";

@@ -1,6 +1,6 @@
 <template>
   <Home />
-  <div>
+  <div class="div_container">
     <Services />
     <Effects />
     <Awards />

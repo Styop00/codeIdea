@@ -1,5 +1,5 @@
 <template>
-    <section id="services" class="px-10 sm:px-24 pt-10 pb-24 flex flex-col">
+    <section id="services" class="px-5 sm:px-0 pt-10 pb-24 flex flex-col">
         <ServiceItem class="md:self-end">
             <Title title="services" description="Web & Mobile Development">
                 <p>We create MVPs for startups and develop complex, enterprise-level platforms with Java, JavaScript, Go, PHP, Swift and other languages, as well as 100+ frameworks.</p>

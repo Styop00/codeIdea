@@ -1,7 +1,7 @@
 <template>
-    <section id="comments" class="px-10 sm:px-24 pt-10 md:pt-0 bg-white-30 md:bg-white">
+    <section id="comments" class="pt-10 md:pt-0 px-5 sm:px-0 bg-white-30 md:bg-white">
         <SectionsTitle sections_title="What our clients say about us" class="mb-0"/>
-        <div class="md:grid md:gap-11 md:grid-cols-2 lg:grid-cols-3 bg-white-30 md:pt-11 pb-24 bg-white hidden md:inline bg-">
+        <div class="md:grid md:gap-11 lg:grid-cols-2 xl:grid-cols-3 bg-white-30 md:pt-11 pb-24 bg-white hidden md:inline">
 
             <div class="carousel__item">
                 <Comment name="Kevin Hill" position="Sr Director of Tech & Data Strategy at SuperOrdinary">

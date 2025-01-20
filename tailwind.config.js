@@ -7,7 +7,12 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-
+    screens: {
+      'sm': '650px',
+      'md': '870px',
+      'lg': '1080px',
+      'xl': '1300px',
+    },    
     extend: {
       colors: {
         ...colors,
@@ -70,7 +75,12 @@ export default {
         '178px': '178px',
         '300px': '300px',
         '345px': '345px',
+        '400px': '400px',
         '500px': '500px',
+        '600px': '600px',
+        '800px': '800px',
+        '1000px': '1000px',
+        '1200px': '1200px',
       },
       height: {
         '3px': '3px',

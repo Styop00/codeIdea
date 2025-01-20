@@ -1,5 +1,5 @@
 <template>
-    <section id="questions" class="md:px-10 sm:px-24">
+    <section id="questions">
         <SectionsTitle sections_title="Frequently asked questions" class="mx-10 md:mx-0 my-10 md:mt-0" />
         <div class="grid md:grid-cols-2">
             <div>

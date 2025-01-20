@@ -26,6 +26,5 @@
 </template>
 
 <script setup>
-  import SidebarLeftSection from "@/components/Menu/SidebarLeftSection.vue"
   import SidebarMenuItems from "@/components/Menu/SidebarMenuItems.vue"
 </script>
