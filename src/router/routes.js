@@ -28,16 +28,9 @@ export default [
         path: '/blog',
         component: Blog,
         name: 'blog',
-        // children: [
-        //     {
-        //         path: 'article',
-        //         component: Article,
-        //         name: 'article',
-        //     }
-        // ],
     },
     {
-        path: '/blog/article/:id',
+        path: '/blog/:id',
         component: Article,
         name: 'article',
     }, 
