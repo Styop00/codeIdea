@@ -1,9 +1,9 @@
 <template>
     <section id="effects" class="px-5 sm:px-0">
         <SectionsTitle sections_title="That's the CodeIdea’s effect" class="mb-10"/>
-        <div class="hidden md:block w-full"> 
+        <div class="hidden md:block w-full -mt-36"> 
             
-            <div v-for="effect in effects" class="sticky" :class=effect.top>
+            <div v-for="effect in effects" class="sticky mt-48" :class=effect.top>
                 <Transition 
                     appear
                     @enter=effect.enter
