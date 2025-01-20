@@ -24,7 +24,7 @@ export default {
         'white-60': '#FAFBFF',
         'white-70': '#FAFCFF',
         'white-100': '#e3e3e3',
-        
+
         'black-10': '#000000DE',
         'black-100': '#000000AD',
         'black-150': '#3C3C43D9',
@@ -56,6 +56,7 @@ export default {
         'gray-850': '#d9d9d9',
         'gray-900': '#979797',
         'gray-950': '#D7D7D7',
+        "black-250":'#282929'
       },
       fontFamily: {
         'montserrat': 'Montserrat'
