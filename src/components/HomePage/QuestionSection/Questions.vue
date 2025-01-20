@@ -7,6 +7,8 @@
                 <template v-for="(question, index) in questions">
                     <QuestionItem class="relative"
                         :q=question.text 
+                        :i=index
+                        :active_i=activeIndex
                         @question-emit="show_question(index)" 
                         :class="{'!bg-white-50': index === activeIndex, 'font-bold': index===activeIndex, 'text-black': index===activeIndex}"
                     >
@@ -20,8 +22,8 @@
                             :class="{'!visible': index===activeIndex}">
                         </template>
 
-                        <div class="font-normal text-black-150 px-4 relative bottom-0 left-0 md:hidden bg-white-60 py-4" :class="{'hidden': index !== activeIndex}">
-                            {{ question.text }}
+                        <div class="font-normal px-4 relative bottom-0 left-0 md:hidden bg-white-60 py-4" :class="{'hidden': index !== activeIndex}">
+                            <p class="text-black-150">We specialize in custom web development, mobile app development for iOS and Android, responsive design, e-commerce solutions, and ongoing maintenance and support.</p>
                         </div>
                     </QuestionItem>
                 </template>

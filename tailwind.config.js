@@ -125,6 +125,26 @@ export default {
       zIndex: {
         '0': '-1',
         '1': '1',
+      },
+      keyframes: {
+        'rotate-1': {
+          'to': {transform: 'rotate(1deg)'}
+        },
+        'rotate-2': {
+          'to': {transform: 'rotate(-1deg)'}
+        },
+        'rotate-3': {
+          'to': {transform: 'rotate(2deg)'}
+        },
+        'rotate-4': {
+          'to': {transform: 'rotate(-2deg)'}
+        }
+      },
+      animation: {
+        'rotate-1': 'rotate-1 5s forwards',
+        'rotate-2': 'rotate-2 5s forwards',
+        'rotate-3': 'rotate-3 5s forwards',
+        'rotate-4': 'rotate-4 5s forwards',
       }
     },
   },
