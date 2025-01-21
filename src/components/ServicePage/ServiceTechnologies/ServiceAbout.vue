@@ -4,7 +4,7 @@
       <div class="flex flex-col gap-3">
         <p class="font-bold text-base leading-4 tracking-wider uppercase">services</p>
         <div class="mb-6 font-bold lg:text-5xl md:text-3xl text-2xl leading-loose tracking-wide " >
-          <span class="underline ld:decoration-5 md:decoration-3 lg:underline-offset-[2rem] md:underline-offset-[1rem] outline-0 ">{{data.border_title}}</span>{{data.title}}</div>
+          <span class="underline decoration-5  underline-offset-[1rem]  outline-0 ">{{data.border_title}}</span>{{data.title}}</div>
         <span class=" font-normal text-lg leading-9 ">We create MVPs for startups and develop complex, enterprise-level
           platforms <br></br>with Java, JavaScript, Go, PHP,
           Swift and other languages, as well as 100+ <br>frameworks.</span>
