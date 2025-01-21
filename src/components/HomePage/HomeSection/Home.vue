@@ -1,8 +1,8 @@
 <template>
     <section id="home" class="md:bg-gradient-to-r from-gray-200 to-gray-300 relative px-5 sm:px-0">
         <div class="div_container
-        flex flex-wrap md:flex-nowrap justify-between pt-28 md:py-40">
-            <div class="text-3xl md:text-4xl font-bold sm:mt-28 lg:mt-48 tracking-wider">
+        flex flex-wrap md:flex-nowrap justify-between py-20 pb-0 md:pb-52 ld:pb-44">
+            <div class="text-3xl md:text-4xl font-bold sm:mt-16 lg:mt-48 tracking-wider">
                 <p class="mb-4">Front-end developer</p>
                 <p class="mb-4">WordPress developer</p>
                 <p class="mb-4">Laravel developer</p>
