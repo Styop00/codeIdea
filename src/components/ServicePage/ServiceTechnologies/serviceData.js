@@ -31,8 +31,7 @@ import adobe from "../../../images/adobe.png"
 
 export const myData={
   web:{
-    border_title:"Web",
-    title:" & Mobile Development",
+    title:"Web & Mobile Development ",
     items:[
       "Frontend Web Technologies",
       "App Programming Interface \"API\"",
@@ -49,8 +48,7 @@ export const myData={
     ]
   },
   ui: {
-    border_title:"UI/UX",
-    title:" Design",
+    title:" Design UI/UX",
     items:[
       "UX Consulting",
       "UX - usability consulting",

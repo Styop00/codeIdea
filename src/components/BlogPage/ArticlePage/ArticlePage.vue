@@ -2,14 +2,14 @@
     <div class="div_container md:mb-10 pt-5 md:pt-40 px-5 sm:px-0">
         <ArticleTitle />
         <p class="md:text-xl leading-8 md:leading-10 mt-6 md:mt-12">In today’s fast-paced world, the pursuit of excellence has become a driving force across industries. From startups to established enterprises, businesses are constantly seeking innovative ways to outperform the competition, enhance customer experiences, and streamline operations. Enter Artificial Intelligence (AI)—a transformative force that is not just disrupting traditional practices, but actively redefining what excellence means in the modern age.</p>
-        
+
         <ol class="list-decimal list-inside marker:font-semibold marker:text-2xl">
-            <li v-for="paragraph in paragraphs" class="my-16"> 
+            <li v-for="paragraph in paragraphs" class="my-16">
                 <Paragraph :title=paragraph.title>
-                    <p v-for="txt in paragraph.text"> 
+                    <p v-for="txt in paragraph.text">
                         {{ txt }}
                     </p>
-                </Paragraph> 
+                </Paragraph>
             </li>
         </ol>
 
@@ -20,13 +20,13 @@
                     <Article></Article>
                 </div>
             </div>
-            
+
             <div class="md:hidden">
                 <ArticlesCarousel>
                     <Article/>
                 </ArticlesCarousel>
             </div>
-        </div>        
+        </div>
     </div>
 </template>
 
