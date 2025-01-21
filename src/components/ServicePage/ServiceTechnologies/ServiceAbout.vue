@@ -3,9 +3,11 @@
     <div class="div_container">
       <div class="flex flex-col gap-3">
         <p class="font-bold text-base leading-4 tracking-wider uppercase">services</p>
-        <div class="mb-6 font-bold lg:text-5xl md:text-3xl text-2xl leading-loose tracking-wide " >
-          <span class="underline decoration-5  underline-offset-[1rem]  outline-0 ">{{data.border_title}}</span>{{data.title}}</div>
-        <span class=" font-normal text-lg leading-9 ">We create MVPs for startups and develop complex, enterprise-level
+        <div class="mb-6 font-bold md:text-5xl mt-8 text-2xl leading-9  md:leading-loose tracking-wide  " >
+          {{data.title}}</div>
+        <div class="w-32 h-1 bg-black"></div>
+
+        <span class=" font-normal text-base mt-8 md:text-lg leading-9 ">We create MVPs for startups and develop complex, enterprise-level
           platforms <br></br>with Java, JavaScript, Go, PHP,
           Swift and other languages, as well as 100+ <br>frameworks.</span>
       </div>
