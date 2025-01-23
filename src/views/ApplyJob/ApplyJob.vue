@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col div_container items-center md:items-start gap-16">
-    <div class="font-bold text-2xl md:text-5xl leading-10 pt-16 tracking-wider	">Job Application Form</div>
+    <div class="font-bold text-2xl md:text-5xl leading-10 pt-5 md:pt-16 tracking-wider	">Job Application Form</div>
     <div class="flex flex-col justify-center items-center  gap-8 pb-12 ">
         <div class="flex flex-col md:flex-row flex-wrap gap-16 justify-between w-full md:w-4/5 px-5 md:px-0" >
           <div class="w-full md:w-2/5 flex flex-col gap-2.5" >
