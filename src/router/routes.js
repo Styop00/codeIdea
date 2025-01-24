@@ -33,7 +33,7 @@ export default [
     props:true
   },
   {
-    path:'/apply/:id',
+    path:'/jobs/:id/apply',
     component: ApplyJob,
     name:"applyJob",
     props:true
