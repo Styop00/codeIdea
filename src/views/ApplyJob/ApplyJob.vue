@@ -26,7 +26,7 @@
       </div>
       <div class="w-full md:w-4/5 flex flex-col gap-3 md:w-4/5 px-5 md:px-0">
         <p class="font-medium	leading-6 text-base"> Cover letter</p>
-        <textarea class="w-full h-[161px] border  rounded-lg p-4 border border-gray-1050 outline-none"></textarea>
+        <input type="text" class="w-full h-40 border  rounded-lg p-4 border border-gray-1050 outline-none">
       </div>
       <UploadCv accept="application/pdf" title="Upload Resume" footerText=" "/>
       <UploadCv title="Any other document to upload" footerText="You can share certificates, diplomas, etc."/>
