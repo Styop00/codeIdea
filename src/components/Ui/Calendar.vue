@@ -10,7 +10,8 @@
            @click="show = toggleCalendar">
 
     </div>
-    <DatePicker v-model="selectDate" class="px-5" :class="show ? '' : '!hidden'" mode="date" @click.stop/>
+
+    <DatePicker v-model="selectDate" class="mx-14" :class="show ? '' : '!hidden'" mode="date" @click.stop/>
   </div>
 </template>
 <script setup>
@@ -69,7 +70,7 @@ onUnmounted(() => {
 </script>
 <style scoped>
 ::v-deep(.vc-bordered) {
-  width: 100%;
+  width: 92%;
   margin-inline: 2rem;
   position: absolute;
   bottom: -17rem;

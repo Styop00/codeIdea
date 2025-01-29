@@ -9,7 +9,7 @@
       </div>
       <div class="flex flex-col items-center justify-center " v-else>
         <img :src="fileIcon" class="w-28 " >
-
+        <p class="font-semibold	leading-10 text-base">{{file.name}}</p>
       </div>
     </div>
     <p class="font-medium	text-sm leading-tight	 text-gray-1150">{{footerText}}</p>
