@@ -67,7 +67,7 @@ const formData=reactive({
 })
 
 function sendValue(){
-  console.log(formData.file2)
+  console.log(formData)
 }
 
 </script>
