@@ -4,7 +4,6 @@
             <BlogTitle />
             <BlogButtons />
             <Articles />
-            <Pagination />
         </div>
     </div>
 </template>
@@ -13,6 +12,5 @@
     import BlogTitle from "@/components/BlogPage/BlogTitle.vue"
     import BlogButtons from "@/components/BlogPage/ButtonsSection/BlogButtons.vue"
     import Articles from "@/components/BlogPage/ArticlesSection/Articles.vue"
-    import Pagination from "@/components/BlogPage/PaginationSection/Pagination.vue"
 
 </script>

@@ -48,7 +48,7 @@
 
     const effects = ref([
         {
-            'top': 'top-32',
+            'top': 'top-20',
             'enter': animation_to(1),
             'btn1': 'bettercare',
             'btn2': '#israel',
@@ -58,7 +58,7 @@
             'img': 'src/assets/img/effecs/42756a28464e992d90e07853a8481ac7.png',
         },
         {
-            'top': 'top-40',
+            'top': 'top-24',
             'enter': animation_to(2),
             'btn1': 'gifted',
             'btn2': '#usa',
@@ -68,7 +68,7 @@
             'img': 'src/assets/img/effecs/6259b4e6305954c01f493b721f928800.png',
         },
         {
-            'top': 'top-48',
+            'top': 'top-28',
             'enter': animation_to(-2),
             'btn1': 'rooya',
             'btn2': '#uk',
@@ -78,7 +78,7 @@
             'img': 'src/assets/img/effecs/f4d04fa35b532eb6075e49be0cfe35b4.png',
         },
         {
-            'top': 'top-56',
+            'top': 'top-32',
             'enter': animation_to(-2),
             'btn1': 'liquidity',
             'btn2': '#usa',
@@ -88,7 +88,7 @@
             'img': 'src/assets/img/effecs/88094aa5ce1e00383c20af17eabb9db2.png',
         },
         {
-            'top': 'top-64',
+            'top': 'top-36',
             'enter': animation_to(2),
             'btn1': 'firsties',
             'btn2': '#usa',
@@ -98,7 +98,7 @@
             'img': 'src/assets/img/effecs/5382b2d89ef386e59d78f058f3b76753.png',
         },
         {
-            'top': 'top-72',
+            'top': 'top-40',
             'enter': animation_to(-2),
             'btn1': 'pictime',
             'btn2': '#israel',
@@ -108,7 +108,7 @@
             'img': 'src/assets/img/effecs/183ee666389135536f7ea9bfb03dc9d8.png',
         },
         {
-            'top': 'top-80',
+            'top': 'top-44',
             'enter': animation_to(-1),
             'btn1': 'waddington’s',
             'btn2': '#canada',
