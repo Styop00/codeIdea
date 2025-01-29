@@ -46,6 +46,9 @@ watch(() => props.modelValue, (newValue) => {
 ::v-deep(.el-select__wrapper:focus){
   box-shadow: none;
 }
+::v-deep(.el-select__wrapper:hover){
+  box-shadow: none;
+}
 ::v-deep(el-select__suffix){
   width: 160px;
 }

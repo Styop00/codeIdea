@@ -71,7 +71,7 @@ const formattedDate = computed(() => {
   margin-inline: 2rem;
   position: absolute;
   bottom: -17rem;
-  border:none
+
 
 }
 
