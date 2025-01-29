@@ -7,16 +7,18 @@
       <img :src="calendar" class="absolute hidden md:flex cursor-pointer top-1/2 right-0 z-1 pr-5" alt="#"
            @click="toggleCalendar">
       <img :src="arrow" class="absolute flex md:hidden cursor-pointer top-1/2 pt-2 right-0 z-1 pr-5" alt="#"
-           @click="show =toggleCalendar">
+           @click="show = toggleCalendar">
 
     </div>
-    <VDatePicker v-model="selectDate" class="px-5" v-if="show" @click.stop/>
+    <DatePicker v-model="selectDate" class="px-5" :class="show ? '' : '!hidden'" mode="date" @click.stop/>
   </div>
 </template>
 <script setup>
 import calendar from "../../images/calendar.png"
-import {computed, onMounted, onUnmounted, reactive, ref, toRef, watch} from "vue";
+import {computed, onMounted, onUnmounted, ref, toRef, watch} from "vue";
 import arrow from "../../images/Vector.png"
+import moment from "moment";
+import { DatePicker } from 'v-calendar';
 
 const props = defineProps({
   modelValue: {
@@ -24,33 +26,38 @@ const props = defineProps({
   }
 })
 const show = ref(false)
-
-function hiddenCalendar() {
-  setTimeout(() => {
-    show.value = false
-  }, 1500)
-}
-
-const selectDate = toRef(props.modelValue)
+const selectDate = toRef('')
 const emits = defineEmits(["update:modelValue"])
-watch(selectDate, (newValue) => {
+
+const formattedDate = computed(() => {
+  if (selectDate.value) {
+    return moment(selectDate.value, 'DD-MM-YYYY').format('DD-MM-YYYY').toString();
+  }
+  return "MM-DD-YYYY"
+});
+
+watch(formattedDate, (newValue) => {
   show.value = false
   emits("update:modelValue", newValue)
 })
+
 watch(() => props.modelValue, (newValue) => {
   if (props.modelValue !== selectDate.value) {
-    selectDate.value = newValue;
+    selectDate.value = moment(newValue, 'DD-MM-YYYY').format('DD-MM-YYYY').toString();
   }
 });
+
 function toggleCalendar(event) {
   event.stopPropagation();
   show.value = !show.value;
 }
+
 function closeCalendar(event) {
   if (!event.target.closest(".calendar-container")) {
     show.value = false;
   }
 }
+
 onMounted(() => {
   window.addEventListener("click", closeCalendar);
 });
@@ -58,12 +65,7 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("click", closeCalendar);
 });
-const formattedDate = computed(() => {
-  if (selectDate.value) {
-    return `${new Date(selectDate.value).getMonth() + 1}-${new Date(selectDate.value).getDate()}-${new Date(selectDate.value).getFullYear()}`
-  }
-  return "MM-DD-YYYY"
-});
+
 </script>
 <style scoped>
 ::v-deep(.vc-bordered) {

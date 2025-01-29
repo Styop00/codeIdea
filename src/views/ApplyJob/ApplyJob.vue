@@ -31,6 +31,7 @@ import Textarea from "../../components/Ui/Textarea.vue";
 import Calendar from "../../components/Ui/Calendar.vue";
 import Select from "../../components/Ui/Select.vue";
 import Phone from "../../components/Ui/Phone.vue";
+import moment from "moment";
 const route=useRoute()
 const inputRef=ref(null)
 const inputRef2=ref(null)
@@ -59,7 +60,7 @@ const formData=reactive({
   phone:"",
   email:"",
   position:"",
-  date:"",
+  date: "",
   desc:"",
   file1:null,
   file2:null

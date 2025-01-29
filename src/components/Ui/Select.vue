@@ -17,7 +17,8 @@
 </template>
 <script setup>
 import {ref, toRef, watch} from "vue";
-import arrow from "../../images/Vector.png"
+import { ElSelect, ElOption } from 'element-plus';  // Импортируем только нужные компоненты
+import 'element-plus/dist/index.css';
 const options=ref(["UI","Project manager","Frontend developer","Backend developer"])
 
 const props=defineProps({
@@ -42,12 +43,15 @@ watch(() => props.modelValue, (newValue) => {
 <style  scoped>
 ::v-deep(.el-select__wrapper){
   box-shadow: none;
+  border:none
 }
 ::v-deep(.el-select__wrapper:focus){
   box-shadow: none;
+  border: none;
 }
 ::v-deep(.el-select__wrapper:hover){
   box-shadow: none;
+  border:none
 }
 ::v-deep(el-select__suffix){
   width: 160px;
