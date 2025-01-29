@@ -1,6 +1,6 @@
 <template>
   <div class="w-full  mt-12   flex flex-col gap-2 justify-center items-center mt-8 md:w-4/5 px-5 md:px-0">
-    <div class="w-full md:w-1/2 relative div-container ">
+    <div class="w-full md:w-1/2 relative calendar-container ">
       <label class="font-medium	leading-6 rounded-lg text-base"> Earliest Possible Start Date</label>
       <input :placeholder="formattedDate" readonly @click="toggleCalendar"
              class="w-full cursor-pointer no-arrows p-4 border border-gray-1050 outline-none	  rounded-lg custom-date-input">
@@ -10,7 +10,7 @@
            @click="show =toggleCalendar">
 
     </div>
-    <VDatePicker v-model="selectDate" class="px-5" v-if="show"/>
+    <VDatePicker v-model="selectDate" class="px-5" v-if="show" @click.stop/>
   </div>
 </template>
 <script setup>
