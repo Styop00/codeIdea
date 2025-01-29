@@ -4,7 +4,6 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import moment from 'moment'
-import 'element-plus/dist/index.css';
 library.add(fas);
 import { createApp } from 'vue'
 import App from './App.vue'
