@@ -49,6 +49,10 @@ watch(() => props.modelValue, (newValue) => {
   box-shadow: none;
   border: none;
 }
+::v-deep(.el-select__wrapper.is-hovering){
+  box-shadow: none;
+  border: none;
+}
 ::v-deep(.el-select__wrapper:hover){
   box-shadow: none;
   border:none
