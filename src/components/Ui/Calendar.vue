@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full  mt-12   flex flex-col gap-2 justify-center items-center mt-8 md:w-4/5 px-5 md:px-0">
+  <div class="w-full     flex flex-col gap-2 justify-center items-center  md:w-4/5 px-5 md:px-0">
     <div class="w-full md:w-1/2 relative calendar-container ">
       <label class="font-medium	leading-6 rounded-lg text-base"> Earliest Possible Start Date</label>
       <input :placeholder="formattedDate" readonly @click="toggleCalendar"
@@ -70,7 +70,7 @@ onUnmounted(() => {
 </script>
 <style scoped>
 ::v-deep(.vc-bordered) {
-  width: 92%;
+  width: 93%;
   margin-inline: 2rem;
   position: absolute;
   bottom: -17rem;

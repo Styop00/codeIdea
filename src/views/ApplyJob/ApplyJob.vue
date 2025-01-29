@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col div_container items-center md:items-start gap-16">
     <div class="font-bold text-2xl md:text-5xl leading-10 pt-5 md:pt-16 tracking-wider	">Job Application Form</div>
-    <div class="flex flex-col justify-center items-center  gap-8 pb-12 ">
-        <div class="flex flex-col md:flex-row flex-wrap gap-3 md:gap-16 justify-between w-full md:w-4/5 px-5 md:px-0" >
+    <div class="flex flex-col justify-center items-center  gap-9 pb-12 ">
+        <div class="flex flex-col md:flex-row flex-wrap gap-9 md:gap-16 justify-between w-full md:w-4/5 px-5 md:px-0" >
           <Input v-model="formData.fullName"  title="Full Name" type="text" placeholder="Maria Anderson" />
           <Phone v-model="formData.phone" title="Phone"/>
           <Input title="Email" v-model="formData.email" type="email" placeholder="ex: myname@example.com"/>
