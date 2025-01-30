@@ -1,6 +1,6 @@
 <template>
     <section id="questions">
-        <SectionsTitle sections_title="Frequently asked questions" class="mx-10 md:mx-0 my-10 md:mt-0" />
+        <SectionsTitle sectionsTitle="Frequently asked questions" class="mx-10 md:mx-0 my-10 md:mt-0" />
         <div class="grid md:grid-cols-2">
             <div>
                 <ul>
@@ -9,7 +9,7 @@
                         :q=question.text 
                         :i=index
                         :active_i=activeIndex
-                        @question-emit="show_question(index)" 
+                        @question-emit="showQuestion(index)" 
                         :class="{'!bg-white-50': index === activeIndex, 'font-bold': index===activeIndex, 'text-black': index===activeIndex}"
                     >
                         <template #arrow>
@@ -66,7 +66,7 @@
     let activeIndex = ref(0);
     let visible = ref(false);
 
-    function show_question(index) {
+    function showQuestion(index) {
         question.value = questions[index].text;
         activeIndex.value = index;
         visible.value = true;

@@ -17,21 +17,21 @@
 
     <div class="text-center mt-8">
 
-        <button v-if="left_arrow_visible" @click="get_articles(currentPage-1)">
+        <button v-if="leftArrowVisible" @click="getArticles(currentPage-1)">
             <fa :icon="['fas', 'angle-left']" />
         </button>
 
         <PaginationButton 
-            v-for="index in pages_count" 
-            :page_number='index' 
-            @click="get_articles(index), reload_page()" 
+            v-for="index in pagesCount" 
+            :pageNumber='index' 
+            @click="getArticles(index),reloadPage()" 
             :class="{
                 'bg-black':currentPage===index,
                 'text-white':currentPage===index,
             }"
         />
 
-        <button v-if="right_arrow_visible" @click="get_articles(currentPage+1)">
+        <button v-if="rightArrowVisible" @click="getArticles(currentPage+1)">
             <fa :icon="['fas', 'angle-right']" />
         </button>
         
@@ -47,47 +47,47 @@
     import {$axios} from "@/plugins/axios.js" 
 
     let articles = ref([]);
-    let pages_count = ref();
+    let pagesCount = ref();
     let page = ref(1);
     let articlesToShow = ref(10);
     let currentPage = ref(1);
-    let left_arrow_visible = ref(false);
-    let right_arrow_visible = ref(false);
-    let pages_visible = ref(true);
+    let leftArrowVisible = ref(false);
+    let rightArrowVisible = ref(false);
+    let pagesVisible = ref(true);
 
-    function reload_page() {
+    function reloadPage() {
         window.scrollTo(0,0);
     }
 
-    async function get_articles(p) {
+    async function getArticles(p) {
         currentPage.value = p;
 
         try {
             const response = await $axios.get('/articles?page=' + p);
 
             articles.value = response.data.data;
-            pages_count.value = Math.ceil(response.data.total / articlesToShow.value);
+            pagesCount.value = Math.ceil(response.data.total / articlesToShow.value);
 
-            if (pages_count.value === 1) {
-                pages_visible.value = false;
+            if (pagesCount.value === 1) {
+                pagesVisible.value = false;
             }
 
             if (currentPage.value === 1) {
-                left_arrow_visible.value = false;
+                leftArrowVisible.value = false;
             } else {
-                left_arrow_visible.value = true;
+                leftArrowVisible.value = true;
             }
 
-            if (pages_count.value >= 2) {
-                right_arrow_visible.value = true;
+            if (pagesCount.value >= 2) {
+                rightArrowVisible.value = true;
             } 
 
-            if (currentPage.value === pages_count.value) {
-                right_arrow_visible.value = false;
+            if (currentPage.value === pagesCount.value) {
+                rightArrowVisible.value = false;
             }
         } catch(error) {
             console.log(error);
         }
     }
-    get_articles(page.value);
+    getArticles(page.value);
 </script>   

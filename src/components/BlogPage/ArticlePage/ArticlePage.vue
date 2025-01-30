@@ -1,5 +1,5 @@
 <template>
-    <div class="div_container md:mb-10 pt-5 md:pt-40 px-5 sm:px-0">
+    <div class="divContainer md:mb-10 pt-5 md:pt-40 px-5 sm:px-0">
         <div class="md:w-5/6">
             <Title title="BLOGarticle" :description="article.title"></Title>
         </div>
@@ -9,13 +9,13 @@
         <div>
             <h2 class="text-2xl md:text-46px font-bold mt-20 md:mt-28">Discover More Insights</h2>
             <div class="md:flex gap-6 hidden md:block">
-                <div v-for="article in latest_articles" class="mt-14">
+                <div v-for="article in latestArticles" class="mt-14">
                     <Article :article="article"/>
                 </div>
             </div>
 
             <div class="md:hidden">
-                <ArticlesCarousel v-for="article in latest_articles">
+                <ArticlesCarousel v-for="article in latestArticles">
                     <Article :article="article" />
                 </ArticlesCarousel>
             </div>
@@ -36,9 +36,9 @@
     const route = useRoute();
     let id = route.params.id;
     let article = ref([]);
-    let latest_articles = ref([]);
+    let latestArticles = ref([]);
 
-    async function get_article(id) {
+    async function getArticle(id) {
         try {
             const response = await $axios.get('/articles/' + id);
             article.value = response.data;
@@ -47,15 +47,15 @@
         }
     }
 
-    async function get_latest_articles() {
+    async function getLatestArticles() {
         try {
             const response = await $axios.get('/random/' + id);
-            latest_articles.value = response.data;
+            latestArticles.value = response.data;
         } catch(error) {
             console.log(error);
         }
     }
-    get_latest_articles();
+    getLatestArticles();
 
-    get_article(id);
+    getArticle(id);
 </script>

@@ -19,12 +19,12 @@
                     </CheckboxField>
                     <br>
                     <CheckboxField text="Send me the latest in tech and inspiring peer case studies" />
-                    <Button btn_text="send" class="w-full"/>
+                    <Button btnText="send" class="w-full"/>
                 </form>
             </div>
 
             <div class="text-gray-10 mt-14 mb-8">
-                <SectionsTitle sections_title="What comes next?"/>
+                <SectionsTitle sectionsTitle="What comes next?"/>
                 <div>
                     <p class="uppercase font-bold tracking-widest">Project Follow-Up</p>
                     <p class="text-sm my-2">You’ll hear from one of these guys within 48 hours</p>
