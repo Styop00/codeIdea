@@ -1,5 +1,5 @@
 <template>
-  <div class="div_container  flex flex-col items-start md:items-end gap-36   px-5 ">
+  <div class="divContainer  flex flex-col items-start md:items-end gap-36   px-5 ">
     <div class="flex flex-col gap-3">
       <p class="font-bold text-2xl md:text-5xl leading-loose tracking-wider	text-black-250	">Join us</p>
       <p class="font-normal text-lg leading-9 text-black-250 text-wrap">View open positions if you want to join the team.</p>
