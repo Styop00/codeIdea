@@ -2,7 +2,7 @@
     <div class="relative">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <template v-for="(article, i) in articles">
-                <Article  :article_index=i :article="article"/>
+                <Article :article="article"/>
                 <Subscribe :class="{
                     'hidden': i != articles.length - 1,
                     'md:hidden': i===articles.length-1,
@@ -22,12 +22,12 @@
         </button>
 
         <PaginationButton 
-            v-for="index in total" 
+            v-for="index in pages_count" 
             :page_number='index' 
-            @click="get_articles(index)" 
+            @click="get_articles(index), reload_page()" 
             :class="{
-                'bg-black':currentPage==index,
-                'text-white':currentPage==index,
+                'bg-black':currentPage===index,
+                'text-white':currentPage===index,
             }"
         />
 
@@ -47,12 +47,17 @@
     import {$axios} from "@/plugins/axios.js" 
 
     let articles = ref([]);
-    let total = ref();
+    let pages_count = ref();
     let page = ref(1);
     let articlesToShow = ref(10);
     let currentPage = ref(1);
     let left_arrow_visible = ref(false);
     let right_arrow_visible = ref(false);
+    let pages_visible = ref(true);
+
+    function reload_page() {
+        window.scrollTo(0,0);
+    }
 
     async function get_articles(p) {
         currentPage.value = p;
@@ -61,20 +66,23 @@
             const response = await $axios.get('/articles?page=' + p);
 
             articles.value = response.data.data;
-            total = ref(response.data.total);
-            total.value = Math.ceil(total.value / articlesToShow.value);
+            pages_count.value = Math.ceil(response.data.total / articlesToShow.value);
 
-            if (currentPage.value == 1) {
+            if (pages_count.value === 1) {
+                pages_visible.value = false;
+            }
+
+            if (currentPage.value === 1) {
                 left_arrow_visible.value = false;
             } else {
                 left_arrow_visible.value = true;
             }
 
-            if (total.value >= 4) {
+            if (pages_count.value >= 2) {
                 right_arrow_visible.value = true;
             } 
 
-            if (currentPage.value == total.value) {
+            if (currentPage.value === pages_count.value) {
                 right_arrow_visible.value = false;
             }
         } catch(error) {
