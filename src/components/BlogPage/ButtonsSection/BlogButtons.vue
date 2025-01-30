@@ -1,6 +1,6 @@
 <template>
     <div class="mb-14">
-        <BlogBtn :btn_text=button v-for="button in buttons"/>
+        <BlogBtn :btnText=button v-for="button in buttons"/>
     </div>
 </template>
 

@@ -5,8 +5,8 @@
             details, see our <a href="#" class="underline-offset-1">privacy policy</a> and adjust your preferences.</p>
         </div>
         <div>
-            <Button btn_text="Accept Cookies"/>
-            <Button btn_text="Decline" class="bg-white border-1px border-gray-600 ml-6"/>
+            <Button btnText="Accept Cookies"/>
+            <Button btnText="Decline" class="bg-white border-1px border-gray-600 ml-6"/>
         </div>
     </div>
 </template>

@@ -8,6 +8,8 @@ library.add(fas);
 import { createApp } from 'vue'
 import App from './App.vue'
 
+import axios from "@/plugins/axios.js";
+
 import {createRouter, createWebHistory} from 'vue-router'
 
 import {createPinia} from 'pinia';
@@ -25,5 +27,6 @@ app.config.globalProperties.$filters = {
 app.use(router)
 app.component('fa', FontAwesomeIcon)
 app.use(pinia)
+app.use(axios)
 app.mount('#app')
 

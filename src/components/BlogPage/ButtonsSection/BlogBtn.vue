@@ -1,14 +1,14 @@
 <template>
     <button class="mt-3 rounded-10px px-3 text-gray-800 bg-white-70 shadow-ex-small"
     :class="{
-        'text-white' : btn_text === 'All', 
-        '!bg-gray-800' : btn_text === 'All',
-        'mr-5': btn_text !== 'Other',
+        'text-white' : btnText === 'All', 
+        '!bg-gray-800' : btnText === 'All',
+        'mr-5': btnText !== 'Other',
     }">
-        {{ btn_text }}
+        {{ btnText }}
     </button>
 </template>
 
 <script setup>
-    defineProps(['btn_text']);
+    defineProps(['btnText']);
 </script>

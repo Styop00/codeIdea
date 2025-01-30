@@ -1,6 +1,6 @@
 <template>
     <Carousel v-bind="config" class="mt-6 !text-left">
-        <Slide v-for="i in 3" class="">
+        <Slide v-for="i in 3">
             <slot/>
         </Slide>
     </Carousel>

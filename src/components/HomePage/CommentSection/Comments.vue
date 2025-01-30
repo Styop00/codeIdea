@@ -1,6 +1,6 @@
 <template>
     <section id="comments" class="pt-10 md:pt-0 px-5 sm:px-0 bg-white-30 md:bg-white">
-        <SectionsTitle sections_title="What our clients say about us" class="mb-0"/>
+        <SectionsTitle sectionsTitle="What our clients say about us" class="mb-0"/>
         <div class="md:grid md:grid-cols-2 md:gap-11 xl:grid-cols-3 bg-white-30 md:pt-11 pb-24 bg-white hidden md:inline">
 
             <div class="carousel__item">
