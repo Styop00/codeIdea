@@ -7,6 +7,8 @@ import About from "@/views/AboutView.vue"
 import Contact from "@/views/ContactView.vue"
 import JobDesc from "@/views/JobDescription/JobDesc.vue"
 import Article from "@/components/BlogPage/ArticlePage/ArticlePage.vue"
+import ApplyJob from "@/views/ApplyJob/ApplyJob.vue"
+
 
 export default [
   {
@@ -28,6 +30,12 @@ export default [
     path: '/jobs/:id',
     component: JobDesc,
     name:'JobDesc',
+    props:true
+  },
+  {
+    path:'/jobs/:id/apply',
+    component: ApplyJob,
+    name:"applyJob",
     props:true
   },
   {
