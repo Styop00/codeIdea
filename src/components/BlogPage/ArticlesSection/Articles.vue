@@ -21,7 +21,7 @@
             <fa :icon="['fas', 'angle-left']" />
         </button>
 
-        <PaginationButton 
+        <PaginationButton v-if="pagesVisible"
             v-for="index in pagesCount" 
             :pageNumber='index' 
             @click="getArticles(index),reloadPage()" 
@@ -70,7 +70,7 @@
 
             if (pagesCount.value === 1) {
                 pagesVisible.value = false;
-            }
+            } 
 
             if (currentPage.value === 1) {
                 leftArrowVisible.value = false;
