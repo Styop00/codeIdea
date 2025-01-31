@@ -1,5 +1,5 @@
 <template>
-  <div class="div_container px-5 md:px-0 flex flex-col gap-16 ">
+  <div class="divContainer px-5 md:px-0 flex flex-col gap-16 ">
     <div class="flex flex-col gap-3">
     <div class="font-semibold	text-2xl md:text-3xl leading-10">Check out the job offer for IT Project Manager</div>
     <div class="list mt-3 font-noemal text-base  md:text-lg leading-8">

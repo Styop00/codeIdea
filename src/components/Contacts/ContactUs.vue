@@ -1,6 +1,6 @@
 <template>
   <div
-    class=" px-5 sm:px-0 div_container py-32 bg-white flex flex-col md:flex-col lg:flex-row justify-start md:justify-start lg:justify-between  items-center lg:gap-1   ">
+    class=" px-5 sm:px-0 divContainer py-32 bg-white flex flex-col md:flex-col lg:flex-row justify-start md:justify-start lg:justify-between  items-center lg:gap-1   ">
     <Contact/>
     <Ceo/>
   </div>

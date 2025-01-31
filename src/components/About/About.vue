@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex flex-col gap-32  ">
   <div class=" pt-10 bg-white pt-44 md:bg-gradient-to-r from-gray-200 to-gray-300  flex flex-col  gap-14">
-      <div class="div_container px-5">
+      <div class="divContainer px-5">
         <p class="font-bold text-base leading-4 tracking-wider uppercase">About us</p>
         <div class="mb-6 font-bold md:text-5xl mt-8 text-2xl leading-9  md:leading-loose tracking-wide ">Meet the people of CodeIdea</div>
         <div class="w-32 h-1 bg-black"></div>

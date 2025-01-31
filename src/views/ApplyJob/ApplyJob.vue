@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col div_container items-center md:items-start gap-16">
+  <div class="flex flex-col divContainer items-center md:items-start gap-16">
     <div class="font-bold text-2xl md:text-5xl leading-10 pt-5 md:pt-16 tracking-wider	">Job Application Form</div>
     <div class="flex flex-col justify-center items-center  gap-9 pb-12 ">
         <div class="flex flex-col md:flex-row flex-wrap gap-9 md:gap-16 justify-between w-full md:w-4/5 px-5 md:px-0" >
@@ -10,13 +10,13 @@
         </div>
         <Calendar v-model="formData.date" class="relative z-10"/>
         <Textarea v-model="formData.desc"/>
-      <UploadCv @clicked="changeFile" :file="formData.file1" title="Upload Resume" footerText=" "/>
+      <UploadCv @clicked="changeFile" :file="formData.file1" @delete="deleteFile" title="Upload Resume" footerText=" "/>
       <input type="file" @change="changePdf" accept="application/pdf"  class="hidden" ref="inputRef" >
 
-      <UploadCv @clicked="changeFile" :file="formData.file2" title="Any other document to upload" footerText="You can share certificates, diplomas, etc."/>
-      <input type="file" @change="changePdf2"  class="hidden" ref="inputRef2" >
+      <UploadCv @clicked="changeFile" :file="formData.file2" title="Any other document to upload" @delete="deleteFile" footerText="You can share certificates, diplomas, etc."/>
+      <input type="file" @change="changePdf2" multiple="true" class="hidden" ref="inputRef2" >
 
-      <Button btn_text="apply" @click="sendValue"/>
+      <Button btnText="Apply" @click="sendValue"/>
     </div>
 
   </div>
@@ -37,11 +37,21 @@ const inputRef=ref(null)
 const inputRef2=ref(null)
 function changePdf(){
  const file= inputRef.value.files[0]
-  formData.file1=file
+  formData.file1[0]=file
+}
+function deleteFile(data,title){
+  if(title==="Upload Resume"){
+    formData.file1=[]
+  }
+  else {
+    formData.file2=Array.from(formData.file2).filter((item,index)=>{
+      return index!==data
+    })
+  }
 }
 function changePdf2(){
-  const file= inputRef2.value.files[0]
-  formData.file2=file
+  const file=Array.from(inputRef2.value.files)
+  formData.file2.push(...file)
 }
 function changeFile(data){
   if(data==="Upload Resume"){
@@ -62,13 +72,14 @@ const formData=reactive({
   position:"",
   date: "",
   desc:"",
-  file1:null,
-  file2:null
+  file1:[],
+  file2:[]
 
 })
 
 function sendValue(){
-  console.log(formData)
+  console.log(formData.file1)
+  console.log('file2' ,formData.file2)
 }
 
 </script>
