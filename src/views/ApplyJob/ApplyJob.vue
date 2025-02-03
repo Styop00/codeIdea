@@ -23,7 +23,7 @@
   </div>
 </template>
 <script setup>
-import {useRoute} from "vue-router";
+import {useRoute, useRouter} from "vue-router";
 import {reactive, ref, watch} from "vue";
 import UploadCv from "./UploadCv.vue";
 import Input from "../../components/Ui/Input.vue";
@@ -36,6 +36,7 @@ import moment from "moment";
 import {$axios} from "../../plugins/axios";
 
 const route = useRoute()
+const router=useRouter()
 const inputRef = ref(null)
 const inputRef2 = ref(null)
 
@@ -83,17 +84,31 @@ const formData = reactive({
 })
 
 async function sendValue() {
-  const data = new FormData()
-  data.append("fullname", formData.fullName)
-  data.append("phone_number", formData.phone)
-  data.append("applied_position", formData.position)
-  data.append('applied_date', formData.date)
-  data.append('about_applicant', formData.desc)
-  data.append("cv_appliacnt", formData.file1[0])
-  if (formData.file2.length > 0) {
-    data.append("additional_file", formData.file2)
+  try {
+    const data = new FormData()
+    data.append("fullname", formData.fullName)
+    data.append("phone_number", formData.phone)
+    data.append("email",formData.email)
+    data.append("applied_position", formData.position)
+    data.append('applied_date', formData.date)
+    data.append('about_applicant', formData.desc)
+    data.append("cv_applicant", formData.file1[0])
+    if (formData.file2.length > 0) {
+      formData.file2.forEach((file, index) => {
+        data.append(`additional_file[${index}]`, file);
+      });
+    }
+    const response = await $axios.post(`jobs/apply/${route.params.id}`, data,
+      {
+        headers:{
+          "Content-Type":"multipart/form-data"
+        }
+      })
+    router.push("/")
   }
-  const response = await $axios.post(`jobs/apply/${route.params.id}`, data)
+  catch (error){
+    console.log(error)
+  }
 }
 
 </script>
