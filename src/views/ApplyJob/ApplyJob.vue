@@ -78,8 +78,8 @@ const formData = reactive({
   position: "",
   date: "",
   desc: "",
-  file1: [],
-  file2: []
+  cv_applicat: [],
+  additional_files: []
 
 })
 
@@ -92,9 +92,9 @@ async function sendValue() {
     data.append("applied_position", formData.position)
     data.append('applied_date', formData.date)
     data.append('about_applicant', formData.desc)
-    data.append("cv_applicant", formData.file1[0])
-    if (formData.file2.length > 0) {
-      formData.file2.forEach((file, index) => {
+    data.append("cv_applicant", formData.cv_applicat[0])
+    if (formData.additional_files.length > 0) {
+      formData.additional_files.forEach((file, index) => {
         data.append(`additional_files[${index}]`, file);
       });
     }
