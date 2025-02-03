@@ -95,7 +95,7 @@ async function sendValue() {
     data.append("cv_applicant", formData.file1[0])
     if (formData.file2.length > 0) {
       formData.file2.forEach((file, index) => {
-        data.append(`additional_file[${index}]`, file);
+        data.append(`additional_files[${index}]`, file);
       });
     }
     const response = await $axios.post(`jobs/apply/${route.params.id}`, data,
