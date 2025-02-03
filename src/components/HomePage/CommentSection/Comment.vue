@@ -7,7 +7,6 @@
             <slot name="comment"/>
         </div>
         <div class="absolute bottom-10 left-10 right-10">
-        <!-- <div class="absolute "> -->
             <div class="grid grid-rows-1 grid-flow-col gap-2 items-center">
                 <div>
                     <slot name="img" />

@@ -1,4 +1,22 @@
 <template>
+    <div class="mb-14">
+        <BlogBtn 
+            btnText="All" 
+            @click="getArticles(page, null, -1)"
+            :class="{'!text-white bg-gray-800' : activeIndex === -1}"  
+        />
+
+        <BlogBtn 
+            v-for="(category, index) in categories"
+            :btnText=category.category_name 
+            @click="getArticles(page, category.id, index)"
+            :class="{'!text-white bg-gray-800' : activeIndex === index}"
+        />
+        
+        <BlogBtn btnText="Other" @click="getArticles(page, 'other', categories.length + 1)"
+            :class="{'!text-white bg-gray-800' : activeIndex === categories.length + 1}" />
+    </div>
+
     <div class="relative">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <template v-for="(article, i) in articles">
@@ -11,27 +29,26 @@
                     'lg:block': i===(articles.length > 3 ? 1 : articles.length -1) 
                 }" />
             </template>
-            
         </div>
     </div>
 
     <div class="text-center mt-8">
 
-        <button v-if="leftArrowVisible" @click="getArticles(currentPage-1)">
+        <button v-if="leftArrowVisible" @click="getArticles(currentPage-1, category_id, activeIndex), reloadPage()">
             <fa :icon="['fas', 'angle-left']" />
         </button>
 
         <PaginationButton 
             v-for="index in pagesCount" 
             :pageNumber='index' 
-            @click="getArticles(index),reloadPage()" 
+            @click="getArticles(index, category_id, activeIndex), reloadPage()" 
             :class="{
                 'bg-black':currentPage===index,
                 'text-white':currentPage===index,
             }"
         />
 
-        <button v-if="rightArrowVisible" @click="getArticles(currentPage+1)">
+        <button v-if="rightArrowVisible" @click="getArticles(currentPage+1, category_id, activeIndex), reloadPage()">
             <fa :icon="['fas', 'angle-right']" />
         </button>
         
@@ -42,6 +59,7 @@
     import Article from "@/components/BlogPage/ArticlesSection/Article.vue"
     import Subscribe from "@/components/BlogPage/ArticlesSection/SubScribe/Subscribe.vue"
     import PaginationButton from "@/components/BlogPage/PaginationButton.vue"
+    import BlogBtn from "@/components/BlogPage/BlogBtn.vue"
 
     import {ref} from "vue"
     import {$axios} from "@/plugins/axios.js" 
@@ -54,16 +72,39 @@
     let leftArrowVisible = ref(false);
     let rightArrowVisible = ref(false);
     let pagesVisible = ref(true);
+    let categories = ref([]);
+    let activeIndex = ref(-1);
+    let category_id = ref();
 
     function reloadPage() {
         window.scrollTo(0,0);
     }
 
-    async function getArticles(p) {
+    async function getCategories() {
+        try {
+            const response = await $axios.get('/categories');
+            categories.value = response.data;
+        } catch(error) {
+            console.log(error);
+        }
+    }
+
+    async function getArticles(p, x, i) {
         currentPage.value = p;
+        leftArrowVisible = ref(false);
+        rightArrowVisible = ref(false);
+        pagesVisible = ref(true);
+        activeIndex.value = i;
+        category_id = x;
 
         try {
-            const response = await $axios.get('/articles?page=' + p);
+            let response = await $axios.get('/articles?page=' + currentPage.value);
+
+            if(x === 'other') {
+                response = await $axios.get('/articles?page=' + currentPage.value + '&other=' + x);
+            } else if (x) {
+                response = await $axios.get('/articles?page=' + currentPage.value + '&category_id=' + x);
+            } 
 
             articles.value = response.data.data;
             pagesCount.value = Math.ceil(response.data.total / articlesToShow.value);
@@ -89,5 +130,7 @@
             console.log(error);
         }
     }
-    getArticles(page.value);
+
+    getCategories();
+    getArticles(page.value, null, -1);
 </script>   
