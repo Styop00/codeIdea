@@ -3,18 +3,18 @@
         <BlogBtn 
             btnText="All" 
             @click="getArticles(page, null, -1)"
-            :class="{'!text-white bg-gray-800' : activeIndex === -1}"  
+            :class="{'!text-white !bg-gray-800' : activeIndex === -1}"  
         />
 
         <BlogBtn 
             v-for="(category, index) in categories"
             :btnText=category.category_name 
             @click="getArticles(page, category.id, index)"
-            :class="{'!text-white bg-gray-800' : activeIndex === index}"
+            :class="{'!text-white !bg-gray-800' : activeIndex === index}"
         />
         
         <BlogBtn btnText="Other" @click="getArticles(page, 'other', categories.length + 1)"
-            :class="{'!text-white bg-gray-800' : activeIndex === categories.length + 1}" />
+            :class="{'!text-white !bg-gray-800' : activeIndex === categories.length + 1}" />
     </div>
 
     <div class="relative">
