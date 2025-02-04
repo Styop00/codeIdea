@@ -5,7 +5,7 @@
 
     <div class="flex gap-6 w-full bg-white md:bg-gradient-to-r from-gray-200 to-gray-300 lg:pb-96 pb-14 " >
 
-        <div class="div_container flex flex-col gap-2 px-5 sm:px-0">
+        <div class="divContainer flex flex-col gap-2 px-5 sm:px-0">
           <div class="font-bold text-base leading-4 tracking-wider uppercase">OUR WORKS</div>
           <div class="mb-6 font-bold md:text-5xl mt-8 text-2xl leading-9  md:leading-loose tracking-wide">Portfolio</div>
           <div class="w-32 h-1 bg-black"></div>
@@ -16,7 +16,7 @@
 
     </div>
 
-    <div class="div_container">
+    <div class="divContainer">
       <PortfolioItems />
     </div>
   </div>

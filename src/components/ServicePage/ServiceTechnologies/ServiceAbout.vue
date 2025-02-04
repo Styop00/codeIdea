@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white md:bg-gradient-to-r from-gray-400 to-gray-500 py-24 flex-col  px-5 sm:px-0"  >
-    <div class="div_container">
+    <div class="divContainer">
       <div class="flex flex-col gap-3">
         <p class="font-bold text-base leading-4 tracking-wider uppercase">services</p>
         <div class="mb-6 font-bold md:text-5xl mt-8 text-2xl leading-9  md:leading-loose tracking-wide  " >

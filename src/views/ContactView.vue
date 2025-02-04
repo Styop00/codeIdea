@@ -1,5 +1,5 @@
 <template>
-  <div class="div_container ">
+  <div class="divContainer ">
     <div class="px-5 flex flex-col gap-3">
       <div class=" font-bold md:text-5xl mt-8 text-2xl leading-9  md:leading-loose tracking-wide">Contact us</div>
       <div class="w-32 h-1 bg-black "></div>

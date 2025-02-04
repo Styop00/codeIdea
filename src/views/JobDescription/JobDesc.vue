@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-col gap-16">
-    <div class="div_container  flex flex-col  items-start px-5 md:px-0 ">
+    <div class="divContainer  flex flex-col  items-start px-5 md:px-0 ">
       <div class="font-bold text-base leading-4 tracking-wider uppercase">Jobs</div>
       <div class="mb-6 font-bold md:text-5xl mt-8 text-2xl leading-9  md:leading-loose tracking-wide">It Project manager</div>
       <div class="w-32 h-1 bg-black"></div>
