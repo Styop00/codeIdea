@@ -3,7 +3,8 @@
     <label>
       Applied position
       <el-select
-                     v-model="localValue" class="no-border p-4 w-full border border-gray-1050 rounded-lg" placeholder="Choose your position">
+        v-model="localValue" class="no-border p-4 w-full border border-gray-1050 rounded-lg"
+        placeholder="Choose your position">
         <el-option
           class="w-full"
           v-for="item in options"
@@ -17,19 +18,20 @@
 </template>
 <script setup>
 import {ref, toRef, watch} from "vue";
-import { ElSelect, ElOption } from 'element-plus';  // Импортируем только нужные компоненты
+import {ElSelect, ElOption} from 'element-plus';  // Импортируем только нужные компоненты
 import 'element-plus/dist/index.css';
-const options=ref(["UI","Project manager","Frontend developer","Backend developer"])
 
-const props=defineProps({
-  modelValue:{
-    type:String,
-    required:true,
+const options = ref(["UI", "Project manager", "Frontend developer", "Backend developer"])
+
+const props = defineProps({
+  modelValue: {
+    type: String,
+    required: true,
   }
 })
-const localValue=toRef(props.modelValue)
+const localValue = toRef(props.modelValue)
 
-const emits=defineEmits()
+const emits = defineEmits()
 watch(localValue, (newValue) => {
   emits('update:modelValue', newValue);
 });
@@ -40,24 +42,28 @@ watch(() => props.modelValue, (newValue) => {
   }
 });
 </script>
-<style  scoped>
-::v-deep(.el-select__wrapper){
+<style scoped>
+::v-deep(.el-select__wrapper) {
   box-shadow: none;
-  border:none
+  border: none
 }
-::v-deep(.el-select__wrapper:focus){
-  box-shadow: none;
-  border: none;
-}
-::v-deep(.el-select__wrapper.is-hovering){
+
+::v-deep(.el-select__wrapper:focus) {
   box-shadow: none;
   border: none;
 }
-::v-deep(.el-select__wrapper:hover){
+
+::v-deep(.el-select__wrapper.is-hovering) {
   box-shadow: none;
-  border:none
+  border: none;
 }
-::v-deep(el-select__suffix){
+
+::v-deep(.el-select__wrapper:hover) {
+  box-shadow: none;
+  border: none
+}
+
+::v-deep(el-select__suffix) {
   width: 160px;
 }
 </style>

@@ -29,14 +29,14 @@ export default [
   {
     path: '/jobs/:id',
     component: JobDesc,
-    name:'JobDesc',
-    props:true
+    name: 'JobDesc',
+    props: true
   },
   {
-    path:'/jobs/:id/apply',
+    path: '/jobs/:id/apply',
     component: ApplyJob,
-    name:"applyJob",
-    props:true
+    name: "applyJob",
+    props: true
   },
   {
     path: '/blog',

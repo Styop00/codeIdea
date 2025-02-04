@@ -6,19 +6,20 @@
 </template>
 <script setup>
 import {toRef, watch} from "vue";
-const props=defineProps({
-  modelValue:{
-    type:String,
+
+const props = defineProps({
+  modelValue: {
+    type: String,
   }
 })
-const localValue=toRef(props.modelValue)
-const emits=defineEmits(["update:modelValue"])
-watch(localValue,(newValue)=>{
-  emits("update:modelValue",newValue)
+const localValue = toRef(props.modelValue)
+const emits = defineEmits(["update:modelValue"])
+watch(localValue, (newValue) => {
+  emits("update:modelValue", newValue)
 })
-watch(()=>props.modelValue,(newValue)=>{
-  if(props.modelValue !==localValue.value){
-    localValue.value=newValue
+watch(() => props.modelValue, (newValue) => {
+  if (props.modelValue !== localValue.value) {
+    localValue.value = newValue
   }
 })
 </script>

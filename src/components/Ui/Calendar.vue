@@ -19,7 +19,7 @@ import calendar from "../../images/calendar.png"
 import {computed, onMounted, onUnmounted, ref, toRef, watch} from "vue";
 import arrow from "../../images/Vector.png"
 import moment from "moment";
-import { DatePicker } from 'v-calendar';
+import {DatePicker} from 'v-calendar';
 
 const props = defineProps({
   modelValue: {

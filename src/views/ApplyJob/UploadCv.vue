@@ -10,10 +10,12 @@
         <p class="text-sm font-semibold text-gray-1150 leading-9">Drag and drop files here</p>
       </div>
       <div class="flex flex-col items-center  justify-center " v-for="(item,index) in file" v-else>
-        <div class="flex flex-col mx-2 justify-center items-center rounded-lg p-3  relative  z-1" >
+        <div class="flex flex-col mx-2 justify-center items-center rounded-lg p-3  relative  z-1">
           <img :src="ifImage(item)" class=" h-24 rounded-lg ">
-          <div class=" w-full  h-full absolute left-0 top-0  z-999 rounded-lg flex justify-center items-center  group  ">
-            <img :src="garIcon" class="w-9 h-auto cursor-pointer hidden group-hover:flex" @click="itemValue($event,index)"  alt="#">
+          <div
+            class=" w-full  h-full absolute left-0 top-0  z-999 rounded-lg flex justify-center items-center  group  ">
+            <img :src="garIcon" class="w-9 h-auto cursor-pointer hidden group-hover:flex"
+                 @click="itemValue($event,index)" alt="#">
           </div>
         </div>
       </div>
@@ -45,22 +47,23 @@ const props = defineProps({
     type: [Array, File]
   }
 })
-const emits = defineEmits(["clicked",'delete'])
+const emits = defineEmits(["clicked", 'delete'])
 
 const hid = computed(() => {
   if (props.file.length > 0) {
     return true
   } else return false
 })
-function itemValue(event,id){
+
+function itemValue(event, id) {
   event.stopPropagation();
-  emits("delete",id,props.title)
+  emits("delete", id, props.title)
 }
-function ifImage(item){
-  if(props.title==="Upload Resume"){
+
+function ifImage(item) {
+  if (props.title === "Upload Resume") {
     return pdfIcon
-  }
-  else if ( item.type.startsWith('image/')){
+  } else if (item.type.startsWith('image/')) {
     return URL.createObjectURL(item)
   }
   return fileIcon
