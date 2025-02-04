@@ -28,19 +28,24 @@
     import Article from "@/components/BlogPage/ArticlesSection/Article.vue"
     import ArticlesCarousel from "@/components/BlogPage/ArticlePage/ArticlesCarousel.vue"
 
-    import {ref} from "vue"
+    import {ref, watch} from "vue"
     import {useRoute} from "vue-router"
 
     import {$axios} from "@/plugins/axios.js" 
+    import { onMounted } from "vue";
 
     const route = useRoute();
-    let id = route.params.id;
     let article = ref([]);
     let latestArticles = ref([]);
 
-    async function getArticle(id) {
+    watch(() => route.params.id, () => {
+        getArticle();
+        getLatestArticles();
+    })
+
+    async function getArticle() {
         try {
-            const response = await $axios.get('/articles/' + id);
+            const response = await $axios.get('/articles/' + route.params.id);
             article.value = response.data;
         } catch(error) {
             console.log(error);
@@ -49,13 +54,13 @@
 
     async function getLatestArticles() {
         try {
-            const response = await $axios.get('/random/' + id);
+            const response = await $axios.get('/random/' + route.params.id);
             latestArticles.value = response.data;
         } catch(error) {
             console.log(error);
         }
     }
-    getLatestArticles();
 
-    getArticle(id);
+    getLatestArticles();
+    getArticle();
 </script>

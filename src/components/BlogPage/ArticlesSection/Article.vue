@@ -1,5 +1,4 @@
 <template>
-    
     <div class="shadow-small-10 p-2">
         <div class="bg-gray-950 rounded h-32"></div>
         <div class="mb-6">
@@ -39,4 +38,6 @@
     function reloadPage() {
         window.scrollTo(0,0);
     }
+
+    
 </script>
