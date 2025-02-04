@@ -10,10 +10,10 @@
       </div>
       <Calendar v-model="formData.date" class="relative z-10"/>
       <Textarea v-model="formData.desc"/>
-      <UploadCv @clicked="changeFile" :file="formData.file1" @delete="deleteFile" title="Upload Resume" footerText=" "/>
+      <UploadCv @clicked="changeFile" :file="formData.cv_applicant" @delete="deleteFile" title="Upload Resume" footerText=" "/>
       <input type="file" @change="changePdf" accept="application/pdf" class="hidden" ref="inputRef">
 
-      <UploadCv @clicked="changeFile" :file="formData.file2" title="Any other document to upload" @delete="deleteFile"
+      <UploadCv @clicked="changeFile" :file="formData.additional_files" title="Any other document to upload" @delete="deleteFile"
                 footerText="You can share certificates, diplomas, etc."/>
       <input type="file" @change="changePdf2" multiple="true" class="hidden" ref="inputRef2">
 
@@ -78,7 +78,7 @@ const formData = reactive({
   position: "",
   date: "",
   desc: "",
-  cv_applicat: [],
+  cv_applicant: [],
   additional_files: []
 
 })
