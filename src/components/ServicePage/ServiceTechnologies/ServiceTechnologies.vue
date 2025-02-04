@@ -1,6 +1,6 @@
 <template>
   <ServiceAbout :data="data"/>
-  <div class="div_container">
+  <div class="divContainer">
     <Technologies :data="data.logos"/>
   </div>
 </template>

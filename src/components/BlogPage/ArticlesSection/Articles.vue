@@ -111,7 +111,7 @@
 
             if (pagesCount.value === 1) {
                 pagesVisible.value = false;
-            }
+            } 
 
             if (currentPage.value === 1) {
                 leftArrowVisible.value = false;

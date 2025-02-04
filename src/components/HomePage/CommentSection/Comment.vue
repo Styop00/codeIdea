@@ -1,7 +1,7 @@
 <template>
     <div class="bg-white shadow-medium p-8 md:p-10 w-300px md:w-full min-h-460px relative">
         <div>
-            <img src="@/assets/img/comments/icon.svg">
+            <img src="@/assets/img/comments/apostrophe.svg">
         </div>
         <div class="my-6 font-medium">
             <slot name="comment"/>
