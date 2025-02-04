@@ -10,13 +10,13 @@
       </div>
       <Calendar v-model="formData.date" class="relative z-10"/>
       <Textarea v-model="formData.desc"/>
-      <UploadCv @clicked="changeFile" :file="formData.cv_applicant" @delete="deleteFile" title="Upload Resume" footerText=" "/>
+      <UploadCv @clicked="changeFile" :file="formData.cv_applicant" @delete="deleteFile" title="Upload Resume"
+                footerText=" "/>
       <input type="file" @change="changePdf" accept="application/pdf" class="hidden" ref="inputRef">
-
-      <UploadCv @clicked="changeFile" :file="formData.additional_files" title="Any other document to upload" @delete="deleteFile"
+      <UploadCv @clicked="changeFile" :file="formData.additional_files" title="Any other document to upload"
+                @delete="deleteFile"
                 footerText="You can share certificates, diplomas, etc."/>
       <input type="file" @change="changePdf2" multiple="true" class="hidden" ref="inputRef2">
-
       <Button btnText="Apply" @click="sendValue"/>
     </div>
 
@@ -36,20 +36,20 @@ import moment from "moment";
 import {$axios} from "../../plugins/axios";
 
 const route = useRoute()
-const router=useRouter()
+const router = useRouter()
 const inputRef = ref(null)
 const inputRef2 = ref(null)
 
 function changePdf() {
   const file = inputRef.value.files[0]
-  formData.file1[0] = file
+  formData.cv_applicant[0] = file
 }
 
 function deleteFile(data, title) {
   if (title === "Upload Resume") {
-    formData.file1 = []
+    formData.cv_applicant = []
   } else {
-    formData.file2 = Array.from(formData.file2).filter((item, index) => {
+    formData.additional_files = Array.from(formData.additional_files).filter((item, index) => {
       return index !== data
     })
   }
@@ -57,7 +57,7 @@ function deleteFile(data, title) {
 
 function changePdf2() {
   const file = Array.from(inputRef2.value.files)
-  formData.file2.push(...file)
+  formData.additional_files.push(...file)
 }
 
 function changeFile(data) {
@@ -88,11 +88,11 @@ async function sendValue() {
     const data = new FormData()
     data.append("fullname", formData.fullName)
     data.append("phone_number", formData.phone)
-    data.append("email",formData.email)
+    data.append("email", formData.email)
     data.append("applied_position", formData.position)
     data.append('applied_date', formData.date)
     data.append('about_applicant', formData.desc)
-    data.append("cv_applicant", formData.cv_applicat[0])
+    data.append("cv_applicant", formData.cv_applicant[0])
     if (formData.additional_files.length > 0) {
       formData.additional_files.forEach((file, index) => {
         data.append(`additional_files[${index}]`, file);
@@ -100,13 +100,12 @@ async function sendValue() {
     }
     const response = await $axios.post(`jobs/apply/${route.params.id}`, data,
       {
-        headers:{
-          "Content-Type":"multipart/form-data"
+        headers: {
+          "Content-Type": "multipart/form-data"
         }
       })
-    router.push("/")
-  }
-  catch (error){
+    await router.push("/")
+  } catch (error) {
     console.log(error)
   }
 }
