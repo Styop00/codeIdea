@@ -8,8 +8,8 @@
   <Carousel v-bind="config" id="effectsCarousel">
     <Slide v-for="effect in effects">
       <Effect>
-        <EffectButton :btnText=effect.btn1 class="text-white" :class=effect.bgBtn/>
-        <EffectButton :btnText=effect.btn2/>
+        <EffectButton :btnText=effect.btn1 class="text-white" :class=effect.bgBtn />
+        <EffectButton :btnText=effect.btn2 />
         <EffectDesc>
           <p> {{ effect.description }} </p>
         </EffectDesc>
