@@ -91,11 +91,11 @@
 
     async function getArticles(p, x, i) {
         currentPage.value = p;
-        leftArrowVisible = ref(false);
-        rightArrowVisible = ref(false);
-        pagesVisible = ref(true);
+        leftArrowVisible.value = false;
+        rightArrowVisible.value = false;
+        pagesVisible.value = true;
         activeIndex.value = i;
-        category_id = x;
+        category_id.value = x;
 
         try {
             let response = await $axios.get('/articles?page=' + currentPage.value);
