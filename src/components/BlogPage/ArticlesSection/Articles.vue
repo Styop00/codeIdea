@@ -38,7 +38,7 @@
             <fa :icon="['fas', 'angle-left']" />
         </button>
 
-        <PaginationButton 
+        <PaginationButton v-if="pagesVisible"
             v-for="index in pagesCount" 
             :pageNumber='index' 
             @click="getArticles(index, category_id, activeIndex), reloadPage()" 
