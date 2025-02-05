@@ -1,18 +1,16 @@
 <template>
-  <div class="divContainer mt-14 flex flex-col gap-14 ">
-    <div class="w-full flex flex-col md:flex-row gap-y-14 justify-between py-6 px-4 shadow-small-10"
+  <div class="divContainer mt-14 flex flex-col gap-14 px-5 md:px-0">
+    <div class="w-full flex flex-col md:flex-row gap-y-14 justify-between py-6 px-4 shadow-small-15"
          v-for="item in items">
       <div class="font-bold text-2xl leading-relaxed">{{ item.title }}</div>
-      <div
-        class="uppercase font-bold leading-4 w-1/2 md:w-fit text-center text-xs tracking-widest py-3 px-3.5 bg-gray-600 rounded-xl cursor-pointer"
-        @click="goToJob(item.id)">view job offer
-      </div>
+      <Button @click="goToJob(item.id)" btn-text="view job offer" class="bg-white shadow-small-20 mt-0"/>
     </div>
   </div>
 
 </template>
 <script setup>
 import {useRouter} from "vue-router";
+import Button from "@/components/Button.vue";
 
 const items = [
   {

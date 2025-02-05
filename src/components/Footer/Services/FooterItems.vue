@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid md:grid-cols-2  lg:grid-cols-9 gap-20 grid-cols-4 gap-x-28 justify-between gap-12 w-full  pb-12 lg:pb-0 md:pb-0 md:border-0 lg:border-0 border-b  border-white/20 ">
+    class="grid md:grid-cols-2  lg:grid-cols-9 grid-cols-4 gap-x-28 justify-between gap-12 w-full  pb-12 lg:pb-0 md:pb-0 md:border-0 lg:border-0 border-b  border-white/20 ">
     <div class="flex lg:max-w-80 md:max-w-80 w-4/5 general md:col-span-1 flex-col col-span-4 gap-5 lg:col-span-3">
       <img :src="logo" class="max-w-32">
       <p class="text-white  text-sm   font-normal leading-5">

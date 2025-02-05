@@ -4,6 +4,7 @@
     <Technologies :data="data.logos"/>
   </div>
 </template>
+
 <script setup>
 import ServiceAbout from "./ServiceAbout.vue";
 import Technologies from "./Technologies.vue";
