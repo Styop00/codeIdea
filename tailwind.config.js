@@ -56,12 +56,12 @@ export default {
         'gray-850': '#d9d9d9',
         'gray-900': '#979797',
         'gray-950': '#D7D7D7',
-        'gray-1000':"#D9D9D9",
-        'gray-1050':'#9EA2AE',
-        "black-250":'#282929',
-        "white-300":"#FBFCFF",
-        'gray-1150':"#B3B3B3",
-        'gray-1100':"#9EA2AE",
+        'gray-1000': "#D9D9D9",
+        'gray-1050': '#9EA2AE',
+        "black-250": '#282929',
+        "white-300": "#FBFCFF",
+        'gray-1150': "#B3B3B3",
+        'gray-1100': "#9EA2AE",
 
       },
       fontFamily: {
@@ -116,7 +116,7 @@ export default {
       },
       boxShadow: {
         'ex-small': '0px 4px 4px 0px #00000024',
-        'small-10':"0px 4px 4px 0px #00000014",
+        'small-10': "0px 4px 4px 0px #00000014",
         'small': "0px 0px 4px 1px #00000026",
         'medium': "0px 10px 40px 0px #0000000F",
         'large': "0px 10px 64px 0px #00000014",

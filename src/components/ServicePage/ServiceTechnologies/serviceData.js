@@ -29,10 +29,10 @@ import figma from "../../../images/figma.png"
 import di from "../../../images/di.png";
 import adobe from "../../../images/adobe.png"
 
-export const myData={
-  web:{
-    title:"Web & Mobile Development ",
-    items:[
+export const myData = {
+  web: {
+    title: "Web & Mobile Development ",
+    items: [
       "Frontend Web Technologies",
       "App Programming Interface \"API\"",
       "Backend Stack",
@@ -41,15 +41,15 @@ export const myData={
       "Development Management",
       "Cloud Providers"
     ],
-    logos:[
+    logos: [
       jsLogo, reactLogo, angularLogo, iconicLogo, vueLogo, nuxtLogo, htmlLogo, cssLogo, reduxLogo, laravelLogo,
       nodeLogo, javaLogo, pyLogo, djLogo, iosLogo, androidLogo, postgrLogo, sqlitLogo, mongoLogo, redisLogo,
       colLogo, awsLogo, googleLogo, herokuLogo, firebasLogo, dockerLogo, kuberLogo
     ]
   },
   ui: {
-    title:" Design UI/UX",
-    items:[
+    title: " Design UI/UX",
+    items: [
       "UX Consulting",
       "UX - usability consulting",
       "UX Review",
@@ -57,7 +57,7 @@ export const myData={
       "UX Workshops",
       "Digital Product Design"
     ],
-    logos:[figma,di,adobe]
+    logos: [figma, di, adobe]
 
   }
 }

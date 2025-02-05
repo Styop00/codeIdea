@@ -1,7 +1,7 @@
 <template>
-  <BlogPage />
+  <BlogPage/>
 </template>
 
 <script setup>
-  import BlogPage from "@/components/BlogPage/BlogPage.vue"
+import BlogPage from "@/components/BlogPage/BlogPage.vue"
 </script>
