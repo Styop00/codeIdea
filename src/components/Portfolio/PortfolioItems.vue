@@ -21,46 +21,12 @@
 <script setup>
 import {$axios} from "@/plugins/axios.js";
 import {ref} from "vue";
-
-// const items = ref([
-//   {
-//     color: "#FF8BB2",
-//     title: "Veseli Carameli",
-//     about: "Corporate website development for Veseli\n" +
-//       "karameli, caramel sweets crafting company",
-//
-//   },
-//   {
-//     color: "#A062CB",
-//     title: "Waddington's",
-//     about: "Cross-platform mobile app for Canadian\n" +
-//       "auction and appraisal company",
-//
-//   },
-//   {
-//     color: "#C9C0FF",
-//     title: "W86",
-//     about: "Website development for real estate\n" +
-//       "development company project in Krems,\n" + "Austria",
-//
-//   },
-//   {
-//     color: "#3BA8FF",
-//     title: "Template\n" +
-//       "Monster",
-//     about: "Website development for real estate\n" +
-//       "development company project in Krems,\n" + "Austria",
-//
-//   },
-// ]);
-
 const items = ref([{}]);
 
 async function getPortfolio() {
   try {
     const response = await $axios.get('/portfolio');
     items.value = response.data.data;
-    console.log(items.value);
   } catch (error) {
     console.log(error);
   }
