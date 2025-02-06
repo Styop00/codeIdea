@@ -1,118 +1,21 @@
 <template>
   <section id="comments" class="pt-10 md:pt-0 px-5 sm:px-0 bg-white-30 md:bg-white">
     <SectionsTitle sectionsTitle="What our clients say about us" class="mb-0"/>
-    <div class="md:grid md:grid-cols-2 md:gap-11 xl:grid-cols-3 bg-white-30 md:pt-11 pb-24 bg-white hidden md:inline">
+    <div class="md:grid md:grid-cols-2 md:gap-11 xl:grid-cols-3 bg-white-30 md:pt-11 pb-24 hidden">
 
-      <div class="carousel__item">
-        <Comment name="Kevin Hill" position="Sr Director of Tech & Data Strategy at SuperOrdinary">
+      <div v-for="feedback in feedbacks">
+        <Comment :name="feedback.user.firstname + ' ' + feedback.user.lastname" :position="feedback.user.position">
           <template #comment>
-            <p>
-              I don’t need to spoon-feed them.
-              Our partnership is truly a
-              partnership.
-            </p>
+            <p> {{ feedback.feedback }} </p>
           </template>
 
           <template #img>
-            <img src="@/assets/img/comments/cfdc3c7d4d8bd15935a1c67714068cc0.png" class="w-16">
-          </template>
-        </Comment>
-      </div>
-
-      <div class="carousel__item">
-        <Comment name="Kevin Hill" position="Sr Director of Tech & Data Strategy at SuperOrdinary">
-          <template #comment>
-            <p>
-              I don’t need to spoon-feed them.
-              Our partnership is truly a
-              partnership.
-            </p>
-          </template>
-
-          <template #img>
-            <img src="@/assets/img/comments/cfdc3c7d4d8bd15935a1c67714068cc0.png" class="w-16">
-          </template>
-        </Comment>
-      </div>
-
-      <div class="carousel__item">
-        <Comment name="Kevin Hill" position="Sr Director of Tech & Data Strategy at SuperOrdinary">
-          <template #comment>
-            <p>
-              I don’t need to spoon-feed them.
-              Our partnership is truly a
-              partnership.
-            </p>
-          </template>
-
-          <template #img>
-            <img src="@/assets/img/comments/cfdc3c7d4d8bd15935a1c67714068cc0.png" class="w-16">
-          </template>
-        </Comment>
-      </div>
-
-      <div class="carousel__item">
-        <Comment name="Naomi Rubinstein" position="CEO & Founder at Bettercare">
-          <template #comment>
-            <p>
-              They’ve added flexibility where
-              the system was previously rigid,
-              and they take full responsibility
-              for the project, quickly fixing any
-              issues that arise. Our company
-              wouldn’t be where it is without
-              the work they’ve done.
-            </p>
-          </template>
-
-          <template #img>
-            <img src="@/assets/img/comments/a03ff97881ce633edf808c20a998da0c.png" class="w-16">
-          </template>
-        </Comment>
-      </div>
-
-      <div class="carousel__item">
-        <Comment name="Naomi Rubinstein" position="CEO & Founder at Bettercare">
-          <template #comment>
-            <p>
-              They’ve added flexibility where
-              the system was previously rigid,
-              and they take full responsibility
-              for the project, quickly fixing any
-              issues that arise. Our company
-              wouldn’t be where it is without
-              the work they’ve done.
-            </p>
-          </template>
-
-          <template #img>
-            <img src="@/assets/img/comments/a03ff97881ce633edf808c20a998da0c.png" class="w-16">
-          </template>
-        </Comment>
-      </div>
-
-      <div class="carousel__item">
-        <Comment name="Naomi Rubinstein" position="CEO & Founder at Bettercare">
-          <template #comment>
-            <p>
-              They’ve added flexibility where
-              the system was previously rigid,
-              and they take full responsibility
-              for the project, quickly fixing any
-              issues that arise. Our company
-              wouldn’t be where it is without
-              the work they’ve done.
-            </p>
-          </template>
-
-          <template #img>
-            <img src="@/assets/img/comments/a03ff97881ce633edf808c20a998da0c.png" class="w-16">
+            <img :src="feedback.user.picture" class="w-16 rounded-full" alt="#">
           </template>
         </Comment>
       </div>
     </div>
-
-    <CommentsCarousel class="md:hidden"/>
+    <CommentsCarousel class="md:hidden" :feedbacks="feedbacks"/>
   </section>
 </template>
 
@@ -120,4 +23,19 @@
 import SectionsTitle from "@/components/HomePage/SectionsTitle.vue"
 import Comment from "@/components/HomePage/CommentSection/Comment.vue"
 import CommentsCarousel from "@/components/HomePage/CommentSection/CommentsCarousel.vue"
+import {$axios} from "@/plugins/axios.js";
+import {ref} from "vue";
+
+const feedbacks = ref([]);
+
+async function getFeedbacks() {
+  try {
+    const response = await $axios.get('/feedbacks');
+    feedbacks.value = response.data.data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+getFeedbacks();
 </script>
