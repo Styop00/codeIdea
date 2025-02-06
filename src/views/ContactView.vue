@@ -1,16 +1,20 @@
 <template>
-  <div class="divContainer ">
-    <div class="px-5 flex flex-col gap-3">
-      <div class=" font-bold md:text-5xl mt-8 text-2xl leading-9  md:leading-loose tracking-wide">Contact us</div>
-      <div class="w-32 h-1 bg-black "></div>
-      <p class="w-full font-normal text-base mt-8 md:text-lg leading-9  md:w-3/5">We transform the way IT products are
-        developed, creating a collaborative culture where teams and founders shape the success of digital products
-        together.</p>
+  <div class="md:pt-32">
+    <div class="w-full pt-6 pb-6 px-5 sm:px-0 bg-gradient-to-bl from-gray-200 to-gray-300
+                md:from-white md:to-white">
+      <div class="divContainer">
+        <Title description="Contact us">
+          <p class="w-full lg:w-70%">We transform the way IT products are developed, creating a collaborative culture where
+            teams and founders shape the success of digital products together.</p>
+        </Title>
+      </div>
     </div>
-    <ContactUs/>
+
+    <ContactUs class="divContainer !pt-0 md:!pt-20"/>
   </div>
 </template>
-<script setup>
 
-import ContactUs from "../components/Contacts/ContactUs.vue";
+<script setup>
+import ContactUs from "@/components/Contacts/ContactUs.vue";
+import Title from "@/components/Title.vue";
 </script>

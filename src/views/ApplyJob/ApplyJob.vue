@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col divContainer items-center md:items-start gap-16">
-    <div class="font-bold text-2xl md:text-5xl leading-10 pt-5 md:pt-16 tracking-wider	">Job Application Form</div>
-    <div class="flex flex-col justify-center items-center  gap-9 pb-12 ">
+  <div class="flex flex-col divContainer items-center md:items-start gap-8 md:gap-16">
+    <div class="font-bold text-2xl md:text-5xl leading-10 md:pt-16 tracking-wider	">Job Application Form</div>
+    <div class="flex flex-col justify-center items-center gap-9 pb-12 ">
       <div class="flex flex-col md:flex-row flex-wrap gap-9 md:gap-16 justify-between w-full md:w-4/5 px-5 md:px-0">
         <Input v-model="formData.fullName" title="Full Name" type="text" placeholder="Maria Anderson"/>
         <Phone v-model="formData.phone" title="Phone"/>
@@ -16,7 +16,7 @@
       <UploadCv @clicked="changeFile" :file="formData.additional_files" title="Any other document to upload"
                 @delete="deleteFile"
                 footerText="You can share certificates, diplomas, etc."/>
-      <input type="file" @change="changePdf2" multiple="true" class="hidden" ref="inputRef2">
+      <input type="file" @change="changePdf2" multiple="multiple" class="hidden" ref="inputRef2">
       <Button btnText="Apply" @click="sendValue"/>
     </div>
 

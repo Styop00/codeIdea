@@ -1,16 +1,16 @@
 <template>
-  <div class="divContainer px-5 md:px-0 flex flex-col gap-16 ">
+  <div class="mt-10 md:mt-20 flex flex-col gap-5 md:gap-16 ">
     <div class="flex flex-col gap-3">
       <div class="font-semibold	text-2xl md:text-3xl leading-10">Check out the job offer for IT Project Manager</div>
-      <div class="list mt-3 font-noemal text-base  md:text-lg leading-8">
-        <li v-for="item in items">
+      <ul class="list md:mt-3 text-base md:text-lg w-full md:w-2/3 font-medium">
+        <li v-for="item in items" class="leading-10">
           {{ item }}
         </li>
-      </div>
+      </ul>
     </div>
     <div class="flex flex-col gap-3">
-      <p class="font-semibold text-2xl	 md:text-3xl  leading-10">Candidate profile</p>
-      <p class="w-full md:w-4/5 font-normal text-base md:text-lg  leading-9">We are looking for an individual who has
+      <p class="font-semibold text-2xl md:text-3xl leading-10">Candidate profile</p>
+      <p class="w-full md:w-4/5 font-normal text-base md:text-lg leading-9">We are looking for an individual who has
         extensive project management experience (minimum of 3 years) and wants to take responsibility for project
         success. Additionally, they have knowledge of a project management framework such as PMI/Prince2. They are able
         to work effectively in multiple threads simultaneously, in a VUCA environment. They are not afraid of feedback
@@ -18,23 +18,19 @@
         personality types. It is someone who can balance organizing and planning project work with giving initiative
         and control to the team. It is also someone who is entrepreneurial, i.e., proactively and creatively solves
         problems, keeping in mind the welfare of the client and own team.</p>
-
     </div>
     <div class="flex flex-col gap-3">
       <div class="font-semibold	text-2xl md:text-3xl leading-10">At CodeIdea, you’ll:</div>
-      <div class="list mt-3 font-noemal text-base md:text-lg leading-8">
+      <ul class="list md:mt-3 font-medium text-base md:text-lg leading-8">
         <li v-for="item in items2">
           {{ item }}
         </li>
-        <button class="py-3 px-16 bg-gray-600 rounded-xl mt-16 font-bold text-xs leading-4 tracking-wides"
-                @click="goToJob(idJob)">APPLY
-        </button>
+      </ul>
+      <Button btnText="APPLY" @click="goToJob(idJob)" class="bg-white shadow-small-20"/>
 
-      </div>
     </div>
-    <div class=" ">
-      <p class="font-bold text-2xl md:text-5xl leading-loose	tracking-widest	mb-8">Meet the people of CodeIdea</p>
-      <div class="w-32 h-1 bg-black md:hidden mb-8"></div>
+    <div class="mt-10">
+      <Title title="ABOUT US" description="Meet the people of CodeIdea" />
 
       <div class="w-full md:w-4/5 font-normal text-base md:text-lg  leading-9"><span class="font-bold">CodeIdea</span>
         is a fast-growing web and mobile apps development company with great experience in software developing. Using
@@ -42,13 +38,10 @@
         product from the scratch - staring with User Experience and ending with Quality Assurance. Shipping the high
         quality product at the right time - this is our formula of success.y.
       </div>
-      <button
-        class="py-3  text-center px-16 bg-gray-600 rounded-xl mt-16 font-bold text-xs leading-4 tracking-widest	 ">
-        Explore
-      </button>
+      <Button btnText="Explore" class="bg-white shadow-small-20 hidden md:block" />
+
     </div>
-    <div
-      class="w-full gap-8 justify-center items-center md:items-start  flex flex-col md:flex-row md:justify-between md:relative md:h-96 ">
+    <div class="pb-20 w-full gap-8 justify-center items-center md:items-start  flex flex-col md:flex-row md:justify-between md:relative md:h-96 ">
       <div class="w-full md:w-2/5 h-64  bg-gray-100 "></div>
       <div class="w-4/5 md:w-1/2 h-64 z-3  bg-gray-900 md:absolute md:inset-y-1/4 md:inset-x-1/4 "></div>
       <div class="w-full md:w-2/5 h-64  bg-gray-100  "></div>
@@ -58,6 +51,8 @@
 <script setup>
 import {defineProps, onMounted, ref} from "vue";
 import {useRoute, useRouter} from "vue-router";
+import Button from "@/components/Button.vue";
+import Title from "@/components/Title.vue";
 
 const route = useRoute()
 const router = useRouter()

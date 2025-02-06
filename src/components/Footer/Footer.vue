@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black w-full  py-10 mt-14 lg:px-14 md:px-14 px-6 flex flex-col justify-between ">
+  <div class="bg-black w-full  py-10 lg:px-14 md:px-14 px-6 flex flex-col justify-between ">
     <div class="divContainer">
       <div>
         <FooterItems/>

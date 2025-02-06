@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full md:pb-72 pt-5 md:pt-40 px-5 sm:px-0">
+  <div class="w-full pt-5 md:pt-40 px-5 sm:px-0">
     <div class="divContainer">
       <BlogTitle/>
       <Articles/>

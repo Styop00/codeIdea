@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between flex-col md:flex-row lg:flex-row px-5 divContainer  gap-12 ">
+  <div class="flex justify-between flex-col md:flex-row lg:flex-row px-5 divContainer gap-12 ">
     <div class=" w-full lg:w-1/2 flex flex-col gap-6">
       <p class="font-bold text-2xl md:text-5xl leading-loose tracking-wider	text-black-250	">Our mission</p>
       <p class="font-normal text-base md:text-lg leading-9 text-black-250">Our mission is to build digital products that
@@ -20,4 +20,3 @@
     </div>
   </div>
 </template>
-<script setup></script>

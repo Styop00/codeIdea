@@ -87,6 +87,10 @@ export default {
         '800px': '800px',
         '1000px': '1000px',
         '1200px': '1200px',
+        '40%': '40%',
+        '55%': '55%',
+        '70%': '70%',
+        '90%': '90%',
       },
       height: {
         '3px': '3px',
@@ -94,7 +98,6 @@ export default {
         '353px': '353px',
         '400px': '400px',
         '600px': '600px',
-        "screen-700": "700px"
       },
       minHeight: {
         '414px': '414px',
@@ -117,6 +120,8 @@ export default {
       boxShadow: {
         'ex-small': '0px 4px 4px 0px #00000024',
         'small-10': "0px 4px 4px 0px #00000014",
+        "small-15" : "0px 4px 4px 0px #00000024",
+        "small-20": "0px 4px 4px 0px #00000040",
         'small': "0px 0px 4px 1px #00000026",
         'medium': "0px 10px 40px 0px #0000000F",
         'large': "0px 10px 64px 0px #00000014",
