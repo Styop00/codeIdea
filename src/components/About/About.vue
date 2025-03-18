@@ -15,10 +15,10 @@
     <JoinUs/>
   </div>
 </template>
+
 <script setup>
 import Team from "./Team.vue";
 import OurMission from "./OurMission.vue";
 import JoinUs from "./JoinUs.vue";
 import Title from "@/components/Title.vue";
-
 </script>

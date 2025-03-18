@@ -1,5 +1,6 @@
 <template>
   <div class="shadow-small-10 p-2">
+    {{article.id}}
     <div class="bg-gray-950 rounded h-32"></div>
     <div class="mb-6">
       <p class="text-sm text-gray-900 mt-3"> {{ day }} {{ showMonth }}, {{ year }} </p>

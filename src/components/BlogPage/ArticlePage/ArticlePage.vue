@@ -6,20 +6,20 @@
 
     <div v-html="article.body" class="md:text-xl leading-8 md:leading-10 mt-6 md:mt-12"></div>
 
-    <div>
-      <h2 class="text-2xl md:text-46px font-bold mt-20 md:mt-28">Discover More Insights</h2>
-      <div class="md:flex gap-6 hidden md:block">
-        <div v-for="article in latestArticles" class="mt-14">
-          <Article :article="article"/>
-        </div>
-      </div>
+<!--    <div>-->
+<!--      <h2 class="text-2xl md:text-46px font-bold mt-20 md:mt-28">Discover More Insights</h2>-->
+<!--      <div class="md:flex gap-6 hidden">-->
+<!--        <div v-for="article in latestArticles" class="mt-14">-->
+<!--          <Article :article="article"/>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="md:hidden">
-        <ArticlesCarousel v-for="article in latestArticles">
-          <Article :article="article"/>
-        </ArticlesCarousel>
-      </div>
-    </div>
+<!--      <div class="md:hidden">-->
+<!--        <ArticlesCarousel v-for="article in latestArticles">-->
+<!--          <Article :article="article"/>-->
+<!--        </ArticlesCarousel>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 
@@ -40,27 +40,27 @@ let latestArticles = ref([]);
 
 watch(() => route.params.id, () => {
   getArticle();
-  getLatestArticles();
+  // getLatestArticles();
 })
 
 async function getArticle() {
   try {
-    const response = await $axios.get('/articles/' + route.params.id);
-    article.value = response.data;
+    const response = await $axios.get('/index.php/wp-json/article/v1/all/' + route.params.id);
+    article.value = response.data[0];
   } catch (error) {
     console.log(error);
   }
 }
 
-async function getLatestArticles() {
-  try {
-    const response = await $axios.get('/random/' + route.params.id);
-    latestArticles.value = response.data;
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-getLatestArticles();
+// async function getLatestArticles() {
+//   try {
+//     const response = await $axios.get('/random/' + route.params.id);
+//     latestArticles.value = response.data;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+//
+// getLatestArticles();
 getArticle();
 </script>

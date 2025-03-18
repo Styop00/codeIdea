@@ -8,7 +8,7 @@
 
     <BlogBtn
       v-for="(category, index) in categories"
-      :btnText=category.category_name
+      :btnText=category.name
       @click="getArticles(page, category.id, index)"
       :class="{'!text-white !bg-gray-800' : activeIndex === index}"
     />
@@ -82,7 +82,7 @@ function reloadPage() {
 
 async function getCategories() {
   try {
-    const response = await $axios.get('/categories');
+    const response = await $axios.get('/index.php/wp-json/categories/v1/all/');
     categories.value = response.data;
   } catch (error) {
     console.log(error);
@@ -98,12 +98,13 @@ async function getArticles(p, x, i) {
   category_id.value = x;
 
   try {
-    let response = await $axios.get('/articles?page=' + currentPage.value);
+    let response = await $axios.get('/index.php/wp-json/articles/v1/all/?page=' + currentPage.value);
 
+    // es 2 link-ery avelacru get-articles.php-um
     if (x === 'other') {
-      response = await $axios.get('/articles?page=' + currentPage.value + '&other=' + x);
+      response = await $axios.get('/index.php/wp-json/articles/v1/all/?page=' + currentPage.value + '&other=' + x);
     } else if (x) {
-      response = await $axios.get('/articles?page=' + currentPage.value + '&category_id=' + x);
+      response = await $axios.get('/index.php/wp-json/articles/v1/all/?page=' + currentPage.value + '&category_id=' + x);
     }
 
     articles.value = response.data.data;

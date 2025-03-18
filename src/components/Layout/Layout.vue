@@ -8,11 +8,6 @@
   </Transition>
   <div class="w-full p-0 flex flex-col justify-between " v-if="dataStore.visible_content">
     <div>
-      <div class="mb-28">
-        <div class=" w-full bg-white md:bg-gradient-to-r from-gray-200 to-gray-300 pt-0  h-28  max-h-28 z-[99] fixed">
-          <Header/>
-        </div>
-      </div>
       <RouterView/>
     </div>
     <Footer/>
@@ -20,7 +15,6 @@
 </template>
 
 <script setup>
-import Header from "../Header/Header.vue"
 import Footer from "../Footer/Footer.vue";
 import {useDataStore} from "@/store/dataStore.js";
 import Sidebar from "@/components/Menu/Sidebar.vue";

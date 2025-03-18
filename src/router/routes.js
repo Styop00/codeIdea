@@ -38,16 +38,16 @@ export default [
     name: "applyJob",
     props: true
   },
-  {
-    path: '/blog',
-    component: Blog,
-    name: 'blog',
-  },
-  {
-    path: '/blog/:id',
-    component: Article,
-    name: 'article',
-  },
+  // {
+  //   path: '/blog',
+  //   component: Blog,
+  //   name: 'blog',
+  // },
+  // {
+  //   path: '/blog/:id',
+  //   component: Article,
+  //   name: 'article',
+  // },
   {
     path: '/careers',
     component: Careers,

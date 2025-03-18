@@ -24,8 +24,8 @@ let users = ref([]);
 
 async function getUsers() {
   try {
-    const response = await $axios.get('/users');
-    users.value = response.data.data;
+    const response = await $axios.get('/index.php/wp-json/employees/v1/all/');
+    users.value = response.data;
   } catch (error) {
     console.log(error);
   }

@@ -22,9 +22,90 @@ body {
     box-sizing: border-box;
 }
 
+#get-in-touch {
+    border: 1px solid #000;
+    color: #000;
+    width: 220px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: center;
+}
+
+.diagonalAnimation:after,
+#get-in-touch:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500%;
+    height: 1000%;
+    background-color: #000;
+    z-index: 1;
+    color: white;
+    transform-origin: 0 0;
+    transform: translateX(18%) translateY(10%) rotate(-45deg);
+    transition: transform .3s;
+}
+
+.diagonalAnimation:hover::after,
+#get-in-touch:hover::after {
+    transform: translateX(-10%) translateY(10%) rotate(-45deg);
+}
+
+.diagonalAnimation:before,
+#get-in-touch:before {
+    color: #fff;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: .4s;
+}
+
+.diagonalAnimation:before {
+    content: "EXPLORE";
+}
+
+#get-in-touch:before {
+    content: "GET IN TOUCH";
+}
+
+.diagonalAnimation:hover:before,
+#get-in-touch:hover:before {
+    top: 50%;
+}
+
+#get-in-touch a {
+    width: 100%;
+}
+
+.diagonalAnimation span,
+#get-in-touch a {
+    position: absolute;
+    transition: .4s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.diagonalAnimation:hover span,
+#get-in-touch:hover a {
+    top: -50px;
+}
+
+.parentDiv:focus-within .iconsSpan {
+    visibility: visible;
+}
+
 .divContainer {
     width: 1300px;
-    margin-inline: auto;
+    margin-inline: auto !important;
 }
 
 @media screen and (max-width: 1535px) {
@@ -35,7 +116,7 @@ body {
 
 @media screen and (max-width: 1300px) {
     .divContainer {
-        width: 800px;
+        width: 900px;
     }
 }
 

@@ -1,19 +1,24 @@
 <template>
   <section id="contact" class="md:py-28 px-5 sm:px-0">
-    <div class="flex lg:justify-between flex-col lg:flex-row">
-      <div class="md:border-[3px] border-gray-10 lg:w-1/2 md:px-14 pt-20 md:pb-28">
+    <div class="flex justify-between flex-col lg:flex-row lg:gap-14">
+      <div class="lg:w-1/2 md:border-[3px] border-gray-10 md:px-14 pt-20 md:pb-20">
 
         <h3 class="text-lg font-bold tracking-widest">CONTACT US</h3>
-        <p class="text-[15px] text-[#000000DE] mt-2 mb-5">Thank you for your time. We really appreciate your interest in
+        <p class="text-[15px] text-black-10 mt-2 mb-5">Thank you for your time. We really appreciate your interest in
           our company.</p>
 
         <form>
           <InputField name="Full name*"/>
           <InputField name="Email*"/>
           <InputField name="Phone number*"/>
-          <div class="relative">
-            <textarea class="border-b-[1px] w-full h-24 text-[#282929] mb-9">Message *</textarea>
-            <span class="absolute top-0 right-0">
+          <div class="relative parentDiv">
+            <textarea
+              class="w-full h-24 mb-9 placeholder-gray-100 p-4 bg-white-40 rounded-6px"
+              :placeholder="textareaText"
+              @focus="changeText"
+              @blur="resetText"
+            ></textarea>
+            <span class="iconsSpan absolute top-4 right-4 invisible">
               <img src="@/assets/img/contacts/icon.svg" alt="#">
             </span>
           </div>
@@ -22,12 +27,12 @@
           </CheckboxField>
           <br>
           <CheckboxField text="Send me the latest in tech and inspiring peer case studies"/>
-          <Button btnText="send" class="w-full bg-white shadow-small-20"/>
+          <Button btnText="send" class="w-full bg-white border-1px border-black hover:bg-black hover:text-white duration-500"/>
         </form>
       </div>
 
-      <div class="text-gray-10 mt-14 mb-8 ml-4">
-        <SectionsTitle sectionsTitle="What comes next?"/>
+      <div class="lg:w-1/2 text-gray-10 mt-14 mb-8">
+        <SectionsTitle sectionsTitle="Hi. Tell us about your project."/>
         <div>
           <p class="uppercase font-bold tracking-widest">Project Follow-Up</p>
           <p class="text-sm my-2">You’ll hear from one of these guys within 48 hours</p>
@@ -92,4 +97,13 @@ import CheckboxField from "@/components/Contacts/RadioField.vue"
 import Button from "@/components/Button.vue"
 import SectionsTitle from "@/components/HomePage/SectionsTitle.vue"
 import Info from "@/components/Contacts/Info.vue"
+import {ref} from 'vue'
+
+const textareaText = ref("Message *");
+const changeText = () => {
+  textareaText.value = "";
+}
+const resetText = () => {
+  textareaText.value = "Message *";
+}
 </script>

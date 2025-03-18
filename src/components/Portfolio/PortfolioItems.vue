@@ -1,9 +1,9 @@
 <template>
   <div class="w-full flex flex-col lg:flex-row relative gap-x-4 gap-y-0 lg:gap-y-32 flex-wrap
-  justify-between lg:-translate-y-[10%]">
-    <div v-for="(item,index) in items" class="lg:w-40% w-full relative">
+  justify-between">
+    <div v-if="visible" v-for="(item,index) in items" class="lg:w-40% w-full relative">
       <div :style="{ backgroundColor: item.color }"
-           :class="['h-600px', index % 2 === 0 ?'lg:translate-y-[155%]':'lg:translate-y-[95%]']">
+           :class="['h-600px', index % 2 === 0 ?'lg:translate-y-[5%]':'lg:-translate-y-[55%]']">
         <div class="lg:w-full w-3/4 z-1 md:translate-x-1/4 lg:translate-x-1/4 absolute">
           <img :src='item.img_url' alt="#">
         </div>
@@ -21,12 +21,15 @@
 import {$axios} from "@/plugins/axios.js";
 import {ref} from "vue";
 const items = ref([{}]);
+const visible = ref(false);
 
 async function getPortfolio() {
   try {
-    const response = await $axios.get('/portfolio');
-    items.value = response.data.data;
+    const response = await $axios.get('index.php/wp-json/portfolio/v1/all/');
+    items.value = response.data;
+    visible.value = true;
   } catch (error) {
+
     console.log(error);
   }
 }
