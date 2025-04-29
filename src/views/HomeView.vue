@@ -1,12 +1,12 @@
 <template>
   <Home/>
-  <div class="divContainer">
-    <Services/>
-    <Effects/>
+  <div>
+    <Services class="divContainer"/>
+    <Effects class="divContainer"/>
     <Awards/>
-    <Comments/>
-    <Questions/>
-    <ContactUs/>
+    <Comments class="divContainer"/>
+    <Questions class="divContainer"/>
+    <ContactUs class="divContainer"/>
   </div>
 </template>
 

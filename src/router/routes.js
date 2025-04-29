@@ -26,14 +26,14 @@ export default [
     component: Services,
     name: 'services',
   },
+  // {
+  //   path: '/jobs/:id',
+  //   component: JobDesc,
+  //   name: 'JobDesc',
+  //   props: true
+  // },
   {
-    path: '/jobs/:id',
-    component: JobDesc,
-    name: 'JobDesc',
-    props: true
-  },
-  {
-    path: '/jobs/:id/apply',
+    path: '/careers/apply',
     component: ApplyJob,
     name: "applyJob",
     props: true
@@ -43,11 +43,11 @@ export default [
     component: Blog,
     name: 'blog',
   },
-  {
-    path: '/blog/:id',
-    component: Article,
-    name: 'article',
-  },
+  // {
+  //   path: '/blog/:id',
+  //   component: Article,
+  //   name: 'article',
+  // },
   {
     path: '/careers',
     component: Careers,

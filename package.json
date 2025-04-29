@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp -r ./dist plugin/codeidea",
     "preview": "vite preview",
     "lint": "eslint . --fix"
   },
@@ -33,6 +33,7 @@
     "postcss": "^8.4.49",
     "sass-embedded": "^1.83.4",
     "tailwindcss": "^3.4.17",
+    "vidstack": "^1.12.13",
     "vite": "^6.0.5",
     "vite-plugin-vue-devtools": "^7.6.8",
     "vue3-select-component": "^0.7.0"

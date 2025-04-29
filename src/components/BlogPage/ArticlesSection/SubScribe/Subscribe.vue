@@ -6,8 +6,8 @@
     </div>
 
     <div>
-      <Input placeholder="Name"/>
-      <Input placeholder="your@email.com"/>
+      <Input placeholder="Name" class="p-2"/>
+      <Input placeholder="your@email.com" class="p-2"/>
     </div>
 
     <div class="absolute -top-1 -right-10">

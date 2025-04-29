@@ -24,13 +24,13 @@
   <Carousel v-bind="carouselConfig" id='comments_carousel'>
     <Slide v-for="feedback in feedbacks">
       <div class="carousel__item">
-        <Comment :name="feedback.user.firstname + ' ' + feedback.user.lastname" :position="feedback.user.position">
+        <Comment :name="feedback.firstname + ' ' + feedback.lastname" :position="feedback.position">
           <template #comment>
             <p> {{ feedback.feedback }} </p>
           </template>
 
           <template #img>
-            <img :src="feedback.user.picture" class="w-16 rounded-full" alt="#">
+            <img :src="feedback.picture" class="w-16 rounded-full" alt="#">
           </template>
         </Comment>
       </div>
