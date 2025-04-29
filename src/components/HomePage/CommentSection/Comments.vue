@@ -5,7 +5,7 @@
     <div class="md:grid md:grid-cols-2 md:gap-11 xl:grid-cols-3 bg-white-30 md:pt-11 pb-24 hidden">
 
       <div v-for="feedback in feedbacks">
-        <Comment :name="feedback.firstname + ' ' + feedback.lastname" :position="feedback.position">
+        <Comment :name="feedback.firstname + ' ' + feedback.lastname" :position="feedback.position" :picture="feedback.picture">
           <template #comment>
             <p> {{ feedback.feedback }} </p>
           </template>
@@ -16,14 +16,14 @@
         </Comment>
       </div>
     </div>
-    <CommentsCarousel class="md:hidden" :feedbacks="feedbacks"/>
+<!--    <CommentsCarousel :feedbacks="feedbacks"/>-->
   </section>
 </template>
 
 <script setup>
 import SectionsTitle from "@/components/HomePage/SectionsTitle.vue"
 import Comment from "@/components/HomePage/CommentSection/Comment.vue"
-import CommentsCarousel from "@/components/HomePage/CommentSection/CommentsCarousel.vue"
+// import CommentsCarousel from "@/components/HomePage/CommentSection/CommentsCarousel.vue"
 import {$axios} from "@/plugins/axios.js";
 import {ref} from "vue";
 

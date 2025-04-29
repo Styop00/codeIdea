@@ -26,23 +26,23 @@ export default [
     component: Services,
     name: 'services',
   },
+  // {
+  //   path: '/jobs/:id',
+  //   component: JobDesc,
+  //   name: 'JobDesc',
+  //   props: true
+  // },
   {
-    path: '/jobs/:id',
-    component: JobDesc,
-    name: 'JobDesc',
-    props: true
-  },
-  {
-    path: '/jobs/:id/apply',
+    path: '/careers/apply',
     component: ApplyJob,
     name: "applyJob",
     props: true
   },
-  // {
-  //   path: '/blog',
-  //   component: Blog,
-  //   name: 'blog',
-  // },
+  {
+    path: '/blog',
+    component: Blog,
+    name: 'blog',
+  },
   // {
   //   path: '/blog/:id',
   //   component: Article,

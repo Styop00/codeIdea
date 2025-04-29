@@ -2,19 +2,17 @@
   <div class="mb-14">
     <BlogBtn
       btnText="All"
-      @click="getArticles(page, null, -1)"
+      @click="getArticles(1, null, -1)"
       :class="{'!text-white !bg-gray-800' : activeIndex === -1}"
     />
 
     <BlogBtn
       v-for="(category, index) in categories"
-      :btnText=category.name
-      @click="getArticles(page, category.id, index)"
+      :key="category.term_id"
+      :btnText="category.name"
+      @click="getArticles(1, category.term_id, index)"
       :class="{'!text-white !bg-gray-800' : activeIndex === index}"
     />
-
-    <BlogBtn btnText="Other" @click="getArticles(page, 'other', categories.length + 1)"
-             :class="{'!text-white !bg-gray-800' : activeIndex === categories.length + 1}"/>
   </div>
 
   <div class="relative">
@@ -32,49 +30,44 @@
     </div>
   </div>
 
-  <div class="text-center mt-8">
-
-    <button v-if="leftArrowVisible" @click="getArticles(currentPage-1, category_id, activeIndex), reloadPage()">
+  <div class="text-center mt-8 mb-8">
+    <button v-if="currentPage > 1" @click="getArticles(currentPage - 1, category_id, activeIndex), reloadPage()">
       <fa :icon="['fas', 'angle-left']"/>
     </button>
 
-    <PaginationButton v-if="pagesVisible"
-                      v-for="index in pagesCount"
-                      :pageNumber='index'
-                      @click="getArticles(index, category_id, activeIndex), reloadPage()"
-                      :class="{
-                'bg-black':currentPage===index,
-                'text-white':currentPage===index,
-            }"
+    <PaginationButton
+      v-for="index in pagesCount"
+      :key="index"
+      :pageNumber="index"
+      @click="getArticles(index, category_id, activeIndex), reloadPage()"
+      :class="{'bg-black text-white': currentPage === index}"
     />
 
-    <button v-if="rightArrowVisible" @click="getArticles(currentPage+1, category_id, activeIndex), reloadPage()">
+    <button v-if="currentPage < pagesCount"
+            @click="getArticles(currentPage + 1, category_id, activeIndex), reloadPage()">
       <fa :icon="['fas', 'angle-right']"/>
     </button>
-
   </div>
 </template>
 
 <script setup>
-import Article from "@/components/BlogPage/ArticlesSection/Article.vue"
-import Subscribe from "@/components/BlogPage/ArticlesSection/SubScribe/Subscribe.vue"
-import PaginationButton from "@/components/BlogPage/PaginationButton.vue"
-import BlogBtn from "@/components/BlogPage/BlogBtn.vue"
+import {ref, onMounted} from 'vue';
+import Article from '@/components/BlogPage/ArticlesSection/Article.vue';
+import Subscribe from '@/components/BlogPage/ArticlesSection/SubScribe/Subscribe.vue';
+import PaginationButton from '@/components/BlogPage/PaginationButton.vue';
+import BlogBtn from '@/components/BlogPage/BlogBtn.vue';
+import {$axios} from '@/plugins/axios.js';
 
-import {ref} from "vue"
-import {$axios} from "@/plugins/axios.js"
-
-let articles = ref([]);
-let pagesCount = ref();
-let page = ref(1);
-let articlesToShow = ref(10);
-let currentPage = ref(1);
-let leftArrowVisible = ref(false);
-let rightArrowVisible = ref(false);
-let pagesVisible = ref(true);
-let categories = ref([]);
-let activeIndex = ref(-1);
-let category_id = ref();
+const articles = ref([]);
+const pagesCount = ref(1);
+const currentPage = ref(1);
+const articlesToShow = ref(10);
+const leftArrowVisible = ref(false);
+const rightArrowVisible = ref(false);
+const pagesVisible = ref(true);
+const categories = ref([]);
+const activeIndex = ref(-1);
+const category_id = ref(null);
 
 function reloadPage() {
   window.scrollTo(0, 0);
@@ -89,49 +82,32 @@ async function getCategories() {
   }
 }
 
-async function getArticles(p, x, i) {
-  currentPage.value = p;
-  leftArrowVisible.value = false;
-  rightArrowVisible.value = false;
-  pagesVisible.value = true;
-  activeIndex.value = i;
-  category_id.value = x;
+async function getArticles(pageNumber, categoryId, index) {
+  currentPage.value = pageNumber;
+  activeIndex.value = index;
+  category_id.value = categoryId;
 
   try {
-    let response = await $axios.get('/index.php/wp-json/articles/v1/all/?page=' + currentPage.value);
-
+    let response = await $axios.get('/index.php/wp-json/wp/v2/posts/?page=' + currentPage.value);
     // es 2 link-ery avelacru get-articles.php-um
-    if (x === 'other') {
-      response = await $axios.get('/index.php/wp-json/articles/v1/all/?page=' + currentPage.value + '&other=' + x);
-    } else if (x) {
-      response = await $axios.get('/index.php/wp-json/articles/v1/all/?page=' + currentPage.value + '&category_id=' + x);
+    if (categoryId) {
+      response = await $axios.get('/index.php/wp-json/wp/v2/posts/?page=' + currentPage.value + '&category_id=' + categoryId);
     }
 
-    articles.value = response.data.data;
-    pagesCount.value = Math.ceil(response.data.total / articlesToShow.value);
+    articles.value = response.data;
+    pagesCount.value = Number(response.headers['x-wp-totalpages']);
 
-    if (pagesCount.value === 1) {
-      pagesVisible.value = false;
-    }
+    leftArrowVisible.value = pageNumber > 1;
+    rightArrowVisible.value = pageNumber < pagesCount.value;
 
-    if (currentPage.value === 1) {
-      leftArrowVisible.value = false;
-    } else {
-      leftArrowVisible.value = true;
-    }
-
-    if (pagesCount.value >= 2) {
-      rightArrowVisible.value = true;
-    }
-
-    if (currentPage.value === pagesCount.value) {
-      rightArrowVisible.value = false;
-    }
+    pagesVisible.value = pagesCount.value > 1;
   } catch (error) {
     console.log(error);
   }
 }
 
-getCategories();
-getArticles(page.value, null, -1);
+onMounted(() => {
+  getCategories();
+  getArticles(currentPage.value, null, -1);
+});
 </script>

@@ -1,52 +1,117 @@
 <template>
-  <div class="divContainer  px-5 grid md:grid-cols-2 gap-y-11 lg:grid-cols-12 justify-center lg:justify-between md:justify-center lg:gap-y-24 mt-3 lg:gap-x-12  ">
+  <div class="overflow-hidden relative w-full divContainer mx-auto py-6">
+    <div class="flex transition-transform duration-500 ease-in-out" :style="sliderStyle">
+      <div
+        v-for="(group, gIndex) in userGroups"
+        :key="gIndex"
+        class="min-w-full grid grid-cols-4 gap-6"
+      >
+        <div
+          v-for="(item, index) in group"
+          :key="index"
+          :class="[
+            'flex flex-col items-center bg-white shadow rounded-lg overflow-hidden transition-transform duration-300',
+            index % 2 === 1 ? 'translate-y-8' : ''
+          ]"
+        >
+          <div class="w-full aspect-square overflow-hidden">
+            <div v-html="item.picture" class="w-full h-full object-cover"></div>
+          </div>
 
-    <div v-for="(item,index) in users" :class="[' lg:col-span-3 md:col-span-1  w-[3/12]' ,
-      (index-4)%7===0 ?' md:col-span-1 lg:col-span-6 lg:translate-x-1/4 translate-x-0 ':' lg:col-span-3 md:col-span-1',(index-6)%7===0?'lg:-translate-x-2/4':'',(index-5)%7===0?'lg:-translate-x-2/4':'',index%2===0?'lg:-translate-y-1/4 ' +
-       'md:-translate-y-1/4 translate-y-0 ':'']">
-      <div class="max-w-40 relative">
-        <div v-html="item.picture"></div>
-        <div class="w-3/5 py-2 h- pl-2.5  pr-10 bg-gray-600 flex flex-col absolute right-0 z-10 top-[80%] position">
-          <p class="font-bold text-lg leading-5 tracking-wide	">{{ item.firstname }}</p>
-          <p class="uppercase font-normal text-sm tracking-wide	leading-5">{{ item.position }}</p>
+          <div class="w-full text-center bg-gray-200 p-2">
+            <p class="font-semibold text-lg">{{ item.firstname }}</p>
+            <p class="text-sm uppercase text-gray-600">{{ item.position }}</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
+    <div class="absolute top-1/2 -translate-y-1/2 left-2 z-10">
+      <div
+        @click="prevSlide"
+        class="bg-white shadow-md p-2 rounded-full cursor-pointer hover:bg-black hover:text-white"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+             stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="absolute top-1/2 -translate-y-1/2 right-2 z-10">
+      <div
+        @click="nextSlide"
+        class="bg-white shadow-md p-2 rounded-full cursor-pointer hover:bg-black hover:text-white"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+             stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="flex justify-center mt-10 space-x-2">
+        <span
+          v-for="(dot, index) in userGroups.length"
+          :key="index"
+          @click="goToSlide(index)"
+          :class="[
+            'w-3 h-3 rounded-full cursor-pointer transition',
+            currentSlide === index ? 'bg-gray-800' : 'bg-gray-300'
+          ]"
+        ></span>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import {$axios} from "@/plugins/axios.js"
-import {ref} from "vue"
+import {ref, computed} from 'vue'
+import {$axios} from '@/plugins/axios.js'
 
-let users = ref([]);
+const users = ref([])
+const currentSlide = ref(0)
 
 async function getUsers() {
   try {
-    const response = await $axios.get('/index.php/wp-json/employees/v1/all/');
-    users.value = response.data;
+    const response = await $axios.get('/index.php/wp-json/employees/v1/all/')
+    users.value = response.data.map(user => {
+      user.picture = user.picture
+        .replace(/(width|height)="[^"]*"/g, '')
+      return user
+    })
   } catch (error) {
-    console.log(error);
+    console.error(error)
   }
 }
 
-getUsers();
+getUsers()
+
+const userGroups = computed(() => {
+  const chunks = []
+  for (let i = 0; i < users.value.length; i += 4) {
+    chunks.push(users.value.slice(i, i + 4))
+  }
+  return chunks
+})
+
+const sliderStyle = computed(() => ({
+  transform: `translateX(-${currentSlide.value * 100}%)`,
+}))
+
+function nextSlide() {
+  if (currentSlide.value < userGroups.value.length - 1) {
+    currentSlide.value++
+  }
+}
+
+function prevSlide() {
+  if (currentSlide.value > 0) {
+    currentSlide.value--
+  }
+}
+
+function goToSlide(index) {
+  currentSlide.value = index
+}
 </script>
-
-<style lang="scss" scoped>
-.position {
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -10px;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-top: 10px solid #C4C4C4;
-  }
-}
-</style>
-
 

@@ -9,7 +9,7 @@
     />
 
     <div class="text-center">
-      <Button btnText="SEE MORE" class="bg-white border-1px border-black hover:bg-black hover:text-white duration-500"/>
+      <Button btnText="SEE ALL SERVICES" class="bg-white border-1px border-black hover:bg-black hover:text-white duration-500"/>
     </div>
 
   </section>
