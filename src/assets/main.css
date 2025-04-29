@@ -138,32 +138,116 @@ body {
     width: 100vw;
 }
 
+#cc-main .cm--bar .cm__body, #cc-main .cm--bar .cm__links {
+    max-width: unset !important;
+    width: 1320px !important;
+}
+
+#cc-main .cm__btns, #cc-main .cm__links {
+    padding: 0 !important;
+    padding-top: 0.25rem !important;
+}
+
+#cc-main .cm__texts {
+    padding: 0 !important;
+    padding-top: 0.25rem !important;
+    flex: unset !important;
+    width: 660px !important;
+}
+
+#cc-main .cm__desc, #cc-main .cm__title {
+    padding: 0 !important;
+}
+
+.cm__title {
+    font-family: "Poppins", sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    text-wrap: pretty !important;
+    line-height: 1.25rem !important;
+    color: #111111 !important;
+}
+
+.cm__btn[data-role="necessary"] {
+    background-color: white !important;
+    border-radius: 10px !important;
+}
+
+.cm__btn[data-role="necessary"]:hover {
+    @apply bg-black !important;
+    transition-duration: .5s !important;
+}
+
+.cm__btn[data-role="necessary"] span {
+    color: black !important;
+}
+
+.cm__btn[data-role="necessary"]:hover span {
+    color: white !important;
+    transition-duration: .5s !important;
+}
+
+.cm__btn[data-role="all"] {
+    background: #000000 !important;
+    border-radius: 10px !important;
+}
+
+.cm__btn > span {
+    color: white !important;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 12px !important;
+    letter-spacing: .1em !important;
+}
+
+#cc-main .cm--bar {
+    width: unset !important;
+    height: 60px !important;
+}
+
+.cm__body {
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+#cc-main .cm__body {
+    flex-direction: unset !important;
+}
+
+.cm__btn {
+    @apply !w-[180px] !h-[40px]
+    text-white bg-black
+    rounded-[10px]
+    text-xs font-bold uppercase
+    tracking-widest text-center
+    hover:bg-gray-700;
+}
+
 @media screen and (max-width: 1535px) {
-    .divContainer, .mega-sub-menu>li {
+    .divContainer, .mega-sub-menu > li, .cm__body {
         width: 1100px;
     }
 }
 
 @media screen and (max-width: 1300px) {
-    .divContainer, .mega-sub-menu>li {
+    .divContainer, .mega-sub-menu > li, .cm__body {
         width: 900px;
     }
 }
 
 @media screen and (max-width: 1080px) {
-    .divContainer, .mega-sub-menu>li {
+    .divContainer, .mega-sub-menu > li, .cm__body {
         width: 800px;
     }
 }
 
 @media screen and (max-width: 870px) {
-    .divContainer, .mega-sub-menu>li {
+    .divContainer, .mega-sub-menu > li, .cm__body {
         width: 600px;
     }
 }
 
 @media screen and (max-width: 650px) {
-    .divContainer, .mega-sub-menu>li {
+    .divContainer, .mega-sub-menu > li, .cm__body {
         width: 100%;
     }
 }
