@@ -1,5 +1,5 @@
 <template>
-  <section id="services" class="px-5 sm:px-0 pt-10 pb-24 flex flex-col">
+  <section id="services" class="px-5 sm:px-0 pb-24 flex flex-col">
     <ServiceItem
       v-for="(service, index) in services"
       :serviceTitle=service.title

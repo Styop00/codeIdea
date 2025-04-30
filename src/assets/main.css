@@ -130,7 +130,7 @@ body {
 }
 
 .divContainer {
-    width: 1320px !important;
+    width: 1320px;
     margin-inline: auto !important;
 }
 
@@ -231,6 +231,19 @@ body {
 @media screen and (max-width: 1300px) {
     .divContainer, .mega-sub-menu > li, .cm__body {
         width: 900px !important;
+        display: block !important;
+    }
+
+    #cc-main .cm--bar .cm__btns {
+        justify-content: center !important;
+    }
+
+    #cc-main .cm--bar {
+        height: auto !important;
+    }
+
+    #cc-main .cm__texts {
+        width: auto !important;
     }
 }
 
@@ -249,5 +262,8 @@ body {
 @media screen and (max-width: 650px) {
     .divContainer, .mega-sub-menu > li, .cm__body {
         width: 100% !important;
+    }
+    .cm__btn-group {
+        margin: 0 auto !important;
     }
 }

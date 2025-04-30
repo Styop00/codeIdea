@@ -1,6 +1,6 @@
 <template>
   <Layout/>
-  <div :class="['z-10 bg-white', { 'sticky bottom-0': !isModalOpen }]">
+  <div :class="['z-10 bg-white', { 'sticky': !isModalOpen }]">
     <AcceptCookie class="divContainer"/>
   </div>
 </template>
