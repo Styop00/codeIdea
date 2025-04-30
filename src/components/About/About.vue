@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex flex-col gap-14 md:gap-32">
+  <div class="divContainer flex flex-col gap-4 md:gap-32">
     <div class="bg-white md:pt-32 md:bg-gradient-to-r from-gray-200 to-gray-300  flex flex-col  gap-14">
       <div class="divContainer">
         <Title title="About us" description="Meet the people of CodeIdea">
@@ -18,17 +18,15 @@
     <OurMission/>
     <Different/>
     <WorkWithUs/>
-    <div class="divContainer">
       <video
         controls
         style="border-radius: 12px;width: 100% !important;"
         src="https://files.vidstack.io/sprite-fight/720p.mp4"
         poster="https://files.vidstack.io/sprite-fight/poster.webp"
       ></video>
-    </div>
-    <Comments class="divContainer"/>
+    <Comments/>
     <JoinUs/>
-    <ContactUs class="divContainer"/>
+    <ContactUs/>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <section class="work-section">
+  <section class="text-center md:py-16 md:px-8 py-4 px-2">
     <h2 class="section-title">What it's like to work with us</h2>
     <div class="grid-container">
       <div v-for="(item, index) in values" :key="index" class="card">
@@ -37,12 +37,6 @@ const values = [
 </script>
 
 <style scoped>
-.work-section {
-  padding: 4rem 2rem;
-  text-align: center;
-  color: #ffffff;
-}
-
 .section-title {
   font-size: 2.25rem;
   font-weight: bold;

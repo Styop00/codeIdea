@@ -76,14 +76,12 @@ const hoveredCard = ref(null)
   background: #000;
 }
 
-.different-section-block {
-  background: #000;
-}
-
 .different-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 @media (min-width: 1024px) {
@@ -106,8 +104,8 @@ const hoveredCard = ref(null)
 
 .circle-wrapper {
   position: relative;
-  width: 380px;
-  height: 380px;
+  width: clamp(340px, 30vw, 380px);
+  height: clamp(340px, 30vw, 380px);
   margin: 0 auto;
 }
 
@@ -128,18 +126,18 @@ const hoveredCard = ref(null)
 }
 
 .circle-1 {
-  width: 380px;
-  height: 380px;
+  width: clamp(340px, 30vw, 380px);
+  height: clamp(340px, 30vw, 380px);
 }
 
 .circle-2 {
-  width: 300px;
-  height: 300px;
+  width: clamp(260px, calc(30vw - 80px), 300px);
+  height: clamp(260px, calc(30vw - 80px), 300px);
 }
 
 .circle-3 {
-  width: 220px;
-  height: 220px;
+  width: clamp(180px, calc(30vw - 160px), 220px);
+  height: clamp(180px, calc(30vw - 160px), 220px);
 }
 
 .codeidea {

@@ -140,30 +140,30 @@ body {
 
 @media screen and (max-width: 1535px) {
     .divContainer, .mega-sub-menu>li {
-        width: 1100px;
+        width: 1100px !important;
     }
 }
 
 @media screen and (max-width: 1300px) {
     .divContainer, .mega-sub-menu>li {
-        width: 900px;
+        width: 900px !important;
     }
 }
 
 @media screen and (max-width: 1080px) {
     .divContainer, .mega-sub-menu>li {
-        width: 800px;
+        width: 800px !important;
     }
 }
 
 @media screen and (max-width: 870px) {
     .divContainer, .mega-sub-menu>li {
-        width: 600px;
+        width: 600px !important;
     }
 }
 
 @media screen and (max-width: 650px) {
     .divContainer, .mega-sub-menu>li {
-        width: 100%;
+        width: 100% !important;
     }
 }

@@ -4,7 +4,8 @@
       <div
         v-for="(group, gIndex) in userGroups"
         :key="gIndex"
-        class="min-w-full grid grid-cols-4 gap-6"
+        class="min-w-full grid gap-6"
+        :style="{'grid-template-columns': `repeat(${imagesCount}, minmax(0, 1fr))`}"
       >
         <div
           v-for="(item, index) in group"
@@ -86,16 +87,35 @@ async function getUsers() {
 
 getUsers()
 
+const imagesCount = computed(() => {
+  const windowWidth = window.innerWidth
+
+  let count = 4;
+  if (windowWidth <= 550) {
+    count = 1
+  } else if (windowWidth <= 750){
+    count = 2
+  } else if (windowWidth <= 950) {
+    count = 3
+  }
+
+  return count
+})
+
 const userGroups = computed(() => {
   const chunks = []
-  for (let i = 0; i < users.value.length; i += 4) {
-    chunks.push(users.value.slice(i, i + 4))
+  for (let i = 0; i < users.value.length; i += imagesCount.value) {
+    chunks.push(users.value.slice(i, i + imagesCount.value))
   }
   return chunks
 })
 
 const sliderStyle = computed(() => ({
   transform: `translateX(-${currentSlide.value * 100}%)`,
+}))
+
+const imagesGridStyles = computed(() => ({
+  'grid-template-columns': `repeat(${imagesCount}, minmax(0, 1fr))`,
 }))
 
 function nextSlide() {
